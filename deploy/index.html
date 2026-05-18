@@ -130,6 +130,8 @@
 
     .tl-detail { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
     .tl-detail-inner { padding: 0 16px 16px; border-top: 1px solid #f5f5f5; }
+    .tl-drive { font-size: 11px; color: #bbb; padding: 3px 0 3px 20px; margin: -2px 0; display: flex; align-items: center; gap: 6px; }
+    .tl-drive::before { content: '↓'; color: #ddd; font-size: 12px; }
     .tl-desc { font-size: 13px; color: #555; line-height: 1.9; margin-bottom: 10px; padding-top: 12px; }
     .tl-tips { display: flex; flex-direction: column; gap: 6px; }
     .tl-tip { display: flex; gap: 8px; font-size: 12px; color: #666; }
@@ -224,7 +226,7 @@
 <div class="hero">
   <div class="hero-label">Travel Itinerary</div>
   <h1>神戸・淡路島の旅</h1>
-  <div class="hero-tagline">2泊3日、ぜんぶあなたのために用意した。</div>
+  <div class="hero-tagline">神戸から淡路島へ、2泊3日の旅。</div>
   <div class="hero-dates">2026.5.19 — 5.21 ｜ 2泊3日</div>
   <div class="hero-badges">
     <span class="badge">🌊 岩屋温泉</span>
@@ -296,7 +298,7 @@
         </div>
         <div class="station-step">
           <div class="step-num">2</div>
-          <div class="step-text">そのまま外（<strong>2Fロータリー出口</strong>）へ。出てすぐのロータリーで待っていて</div>
+          <div class="step-text">そのまま外（<strong>2Fロータリー出口</strong>）へ。改札出てすぐ<strong>左手</strong>のロータリーで待っていて</div>
         </div>
         <div class="station-step">
           <div class="step-num">3</div>
@@ -326,7 +328,7 @@
       <div class="tl-item gold" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">11:00</div>
+            <div class="tl-time">11:00〜12:30</div>
             <div class="tl-title">🦐 道の駅あわじ／えびす丸</div>
             <div class="tl-brief">橋を渡ったらすぐここ。海の前で食べる。</div>
           </div>
@@ -345,12 +347,13 @@
           </div>
         </div>
       </div>
+      <div class="tl-drive">移動 約25分</div>
 
       <!-- 夢舞台 -->
       <div class="tl-item" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">13:00</div>
+            <div class="tl-time">13:00〜14:30</div>
             <div class="tl-title">🌿 夢舞台</div>
             <div class="tl-brief">ここどこ、と思う場所。</div>
           </div>
@@ -370,11 +373,13 @@
         </div>
       </div>
 
+      <div class="tl-drive">同エリア内 徒歩すぐ</div>
+
       <!-- アクアイグニス -->
       <div class="tl-item" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">14:30</div>
+            <div class="tl-time">14:30〜15:00</div>
             <div class="tl-title">🥐 アクアイグニス淡路</div>
             <div class="tl-brief">明日の朝ごはんを、ここで選ぶ。</div>
           </div>
@@ -393,11 +398,13 @@
         </div>
       </div>
 
+      <div class="tl-drive">移動 約25分</div>
+
       <!-- チェックイン -->
       <div class="tl-item gold" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">15:00</div>
+            <div class="tl-time">15:00〜</div>
             <div class="tl-title">🏨 絵島別庭 海と森</div>
             <div class="tl-brief">窓を開けた瞬間から、始まってる。</div>
           </div>
@@ -417,11 +424,13 @@
         </div>
       </div>
 
+      <div class="tl-drive">宿から 約15分</div>
+
       <!-- 本福寺 -->
       <div class="tl-item" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">15:30</div>
+            <div class="tl-time">15:30〜16:10</div>
             <div class="tl-title">⛩ 本福寺 水御堂</div>
             <div class="tl-brief">池を二つに割って、地下へ。</div>
           </div>
@@ -441,11 +450,13 @@
         </div>
       </div>
 
+      <div class="tl-drive">移動 約40分</div>
+
       <!-- 花さじき -->
       <div class="tl-item" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">17:00</div>
+            <div class="tl-time">17:00〜17:45</div>
             <div class="tl-title">🌸 花さじき</div>
             <div class="tl-brief">高台に出た瞬間、深呼吸したくなる。</div>
           </div>
@@ -465,11 +476,13 @@
         </div>
       </div>
 
+      <div class="tl-drive">移動 約15分</div>
+
       <!-- 幸せのパンケーキ -->
       <div class="tl-item gold" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">18:00</div>
+            <div class="tl-time">18:00〜19:00</div>
             <div class="tl-title">🥞 幸せのパンケーキ 淡路島テラス</div>
             <div class="tl-brief">口に入れた瞬間、しゅわっと消える。</div>
           </div>
@@ -489,11 +502,13 @@
         </div>
       </div>
 
+      <div class="tl-drive">移動 約30分</div>
+
       <!-- 夕食 -->
       <div class="tl-item no-expand">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">夜</div>
+            <div class="tl-time">19:30〜</div>
             <div class="tl-title">🍽 絵島別庭 海と森 — 夕食 ＋ 温泉</div>
             <div class="tl-brief">今日のご褒美。</div>
           </div>
@@ -835,16 +850,18 @@
       <div class="tl-item no-expand">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">午前</div>
+            <div class="tl-time">〜11:00</div>
             <div class="tl-title">🏨 チェックアウト → 神戸へ</div>
             <div class="tl-brief">最後の朝ごはん。急がなくていい。</div>
           </div>
         </div>
       </div>
+      <div class="tl-drive">移動 約1時間30分（淡路島→神戸）</div>
+
       <div class="tl-item" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">12:00〜</div>
+            <div class="tl-time">12:30〜13:30</div>
             <div class="tl-title">🍽 神戸ランチ</div>
             <div class="tl-brief">どれにする？一緒に決めよう。</div>
           </div>
