@@ -212,14 +212,18 @@
     .wc-summary.fine { color: #e8a020; }
     .wc-summary.rain { color: var(--coral); }
     .weather-timeslots { display: flex; gap: 0; }
-    .weather-slot { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 4px; border-radius: 10px; }
+    .weather-slot { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px; border-radius: 10px; }
     .weather-slot + .weather-slot { border-left: 1px solid #f0f0f0; }
-    .ws-label { font-size: 10px; color: #aaa; font-weight: 600; letter-spacing: 0.5px; }
+    .ws-label { font-size: 10px; color: #aaa; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 2px; }
     .ws-icon { font-size: 20px; line-height: 1; }
     .ws-temp { font-size: 14px; font-weight: 700; color: #333; }
     .ws-rain { font-size: 11px; color: #aaa; }
     .ws-rain.warn { color: #e87040; font-weight: 700; }
     .ws-rain.danger { color: var(--coral); font-weight: 700; }
+    .ws-meta { display: flex; gap: 6px; align-items: center; margin-top: 3px; flex-wrap: wrap; justify-content: center; }
+    .ws-wind { font-size: 10px; color: #aaa; }
+    .ws-amount { font-size: 10px; color: #6ab0d4; font-weight: 600; }
+    .ws-amount.heavy { color: var(--coral); }
 
     .divider { height: 1px; background: linear-gradient(to right, transparent, var(--sky), transparent); margin: 24px 0; }
 
@@ -877,8 +881,17 @@
         <div class="tl-header">
           <div class="tl-header-text">
             <div class="tl-time">〜11:00</div>
-            <div class="tl-title">🏨 チェックアウト期日</div>
-            <div class="tl-brief">ホテル規定。実際の出発時間は朝に合わせて。</div>
+            <div class="tl-title">🏨 チェックアウト期日（ホテル規定）</div>
+            <div class="tl-brief">部屋を出る締め切り。</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item no-expand">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">10:30</div>
+            <div class="tl-title">🚗 出発</div>
+            <div class="tl-brief">14:00解散に合わせて逆算。</div>
           </div>
         </div>
       </div>
@@ -907,9 +920,9 @@
       <div class="tl-item gold no-expand">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">14:00〜</div>
+            <div class="tl-time">14:00</div>
             <div class="tl-title">👋 またね</div>
-            <div class="tl-brief">新神戸周辺にて。出発時間次第でずれることも。</div>
+            <div class="tl-brief">新神戸周辺にて。</div>
           </div>
         </div>
       </div>
@@ -937,7 +950,7 @@
 <div id="tab-weather" class="tab-content">
   <div class="container">
     <div style="padding-top: 24px;">
-      <div class="weather-note">※5/18 最新更新 | ウェザーニュース＋tenki.jp 淡路市</div>
+      <div class="weather-note">※5/18 最新更新 | ウェザーニュース 淡路市</div>
 
       <div class="weather-card">
         <div class="weather-card-header">
@@ -950,18 +963,27 @@
             <div class="ws-icon">☀️</div>
             <div class="ws-temp">17℃</div>
             <div class="ws-rain">0%</div>
+            <div class="ws-meta">
+              <span class="ws-wind">💨 2m/s</span>
+            </div>
           </div>
           <div class="weather-slot">
             <div class="ws-label">昼</div>
             <div class="ws-icon">☀️</div>
             <div class="ws-temp">28℃</div>
             <div class="ws-rain">0〜10%</div>
+            <div class="ws-meta">
+              <span class="ws-wind">💨 3〜4m/s</span>
+            </div>
           </div>
           <div class="weather-slot">
             <div class="ws-label">夜</div>
             <div class="ws-icon">🌤</div>
             <div class="ws-temp">21℃</div>
             <div class="ws-rain">10%</div>
+            <div class="ws-meta">
+              <span class="ws-wind">💨 2m/s</span>
+            </div>
           </div>
         </div>
       </div>
@@ -975,20 +997,30 @@
           <div class="weather-slot">
             <div class="ws-label">朝</div>
             <div class="ws-icon">🌥</div>
-            <div class="ws-temp">19℃</div>
+            <div class="ws-temp">20℃</div>
             <div class="ws-rain warn">30〜60%</div>
+            <div class="ws-meta">
+              <span class="ws-wind">💨 1〜2m/s</span>
+            </div>
           </div>
           <div class="weather-slot">
             <div class="ws-label">昼</div>
             <div class="ws-icon">🌧</div>
             <div class="ws-temp">22℃</div>
             <div class="ws-rain danger">60〜80% ☔</div>
+            <div class="ws-meta">
+              <span class="ws-wind">💨 1m/s</span>
+              <span class="ws-amount">🌧 1mm</span>
+            </div>
           </div>
           <div class="weather-slot">
             <div class="ws-label">夜</div>
             <div class="ws-icon">🌧</div>
-            <div class="ws-temp">19℃</div>
+            <div class="ws-temp">22℃</div>
             <div class="ws-rain warn">40〜60%</div>
+            <div class="ws-meta">
+              <span class="ws-wind">💨 1m/s</span>
+            </div>
           </div>
         </div>
       </div>
@@ -996,26 +1028,36 @@
       <div class="weather-card">
         <div class="weather-card-header">
           <span class="wc-day">5/21（木）Day 3</span>
-          <span class="wc-summary rain">☔ 朝が雨ピーク　最高24℃</span>
+          <span class="wc-summary rain">☔ 昼に雨ピーク　最高26℃</span>
         </div>
         <div class="weather-timeslots">
           <div class="weather-slot">
             <div class="ws-label">朝</div>
-            <div class="ws-icon">🌧</div>
-            <div class="ws-temp">20℃</div>
-            <div class="ws-rain danger">60〜70% ☔</div>
+            <div class="ws-icon">🌥</div>
+            <div class="ws-temp">22℃</div>
+            <div class="ws-rain warn">60〜70%</div>
+            <div class="ws-meta">
+              <span class="ws-wind">💨 3m/s</span>
+            </div>
           </div>
           <div class="weather-slot">
             <div class="ws-label">昼</div>
-            <div class="ws-icon">🌦</div>
-            <div class="ws-temp">24℃</div>
-            <div class="ws-rain warn">40〜80%</div>
+            <div class="ws-icon">🌧</div>
+            <div class="ws-temp">26℃</div>
+            <div class="ws-rain danger">80% ☔</div>
+            <div class="ws-meta">
+              <span class="ws-wind">💨 4〜5m/s</span>
+              <span class="ws-amount heavy">🌧 1〜2mm</span>
+            </div>
           </div>
           <div class="weather-slot">
             <div class="ws-label">夜</div>
             <div class="ws-icon">🌥</div>
             <div class="ws-temp">20℃</div>
             <div class="ws-rain">40%</div>
+            <div class="ws-meta">
+              <span class="ws-wind">💨 2m/s</span>
+            </div>
           </div>
         </div>
       </div>
