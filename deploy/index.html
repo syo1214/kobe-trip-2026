@@ -204,14 +204,22 @@
     .map-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
     /* ── WEATHER ── */
-    .weather-row { display: flex; align-items: center; background: white; border-radius: 12px; padding: 14px 18px; margin-bottom: 8px; box-shadow: 0 1px 8px rgba(26,39,68,0.06); gap: 12px; }
-    .w-date { font-size: 12px; color: #888; min-width: 80px; }
-    .w-icon { font-size: 22px; }
-    .w-desc { flex: 1; font-size: 13px; }
-    .w-temp { font-weight: 700; font-size: 15px; color: var(--coral); }
-    .w-rain { font-size: 11px; color: #888; text-align: right; min-width: 40px; }
-    .w-rain.danger { color: var(--coral); font-weight: 700; }
-    .weather-note { font-size: 12px; color: #aaa; margin: 12px 0 8px; padding: 0 4px; }
+    .weather-note { font-size: 12px; color: #aaa; margin: 12px 0 12px; padding: 0 4px; }
+    .weather-card { background: white; border-radius: 14px; padding: 14px 16px; margin-bottom: 10px; box-shadow: 0 1px 8px rgba(26,39,68,0.06); }
+    .weather-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .weather-card-header .wc-day { font-size: 12px; color: #888; }
+    .weather-card-header .wc-summary { font-size: 13px; font-weight: 700; }
+    .wc-summary.fine { color: #e8a020; }
+    .wc-summary.rain { color: var(--coral); }
+    .weather-timeslots { display: flex; gap: 0; }
+    .weather-slot { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 4px; border-radius: 10px; }
+    .weather-slot + .weather-slot { border-left: 1px solid #f0f0f0; }
+    .ws-label { font-size: 10px; color: #aaa; font-weight: 600; letter-spacing: 0.5px; }
+    .ws-icon { font-size: 20px; line-height: 1; }
+    .ws-temp { font-size: 14px; font-weight: 700; color: #333; }
+    .ws-rain { font-size: 11px; color: #aaa; }
+    .ws-rain.warn { color: #e87040; font-weight: 700; }
+    .ws-rain.danger { color: var(--coral); font-weight: 700; }
 
     .divider { height: 1px; background: linear-gradient(to right, transparent, var(--sky), transparent); margin: 24px 0; }
 
@@ -283,7 +291,7 @@
       </div>
       <div class="day-weather">
         <div class="temp">☀️ 28℃</div>
-        <div class="rain">降水 20%（午前0%）</div>
+        <div class="rain">朝0% 昼0〜10% 夜10%</div>
       </div>
     </div>
 
@@ -302,7 +310,7 @@
         </div>
         <div class="station-step">
           <div class="step-num">3</div>
-          <div class="step-text">着いたら <strong>DMください</strong>、すぐそこまで行く 🚗</div>
+          <div class="step-text">着いたら <strong>LINEください</strong>、すぐそこまで行く 🚗</div>
         </div>
       </div>
       <div class="station-note">📍 JR新神戸駅 2F ロータリー（北口）</div>
@@ -530,8 +538,8 @@
         <div class="day-title">淡路島満喫</div>
       </div>
       <div class="day-weather">
-        <div class="temp" style="color:var(--coral)">🌧 21℃</div>
-        <div class="rain" style="color:var(--coral);font-weight:700">降水 60% ☔</div>
+        <div class="temp" style="color:var(--coral)">🌧 22℃</div>
+        <div class="rain" style="color:var(--coral);font-weight:700">朝30〜60% 昼☔80%</div>
       </div>
     </div>
 
@@ -539,9 +547,27 @@
       <div class="tl-item no-expand">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">朝</div>
+            <div class="tl-time">7:30〜8:00</div>
+            <div class="tl-title">🌅 起床</div>
+            <div class="tl-brief">起床時間は前日夜に確認しよう。</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item no-expand">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">朝食</div>
             <div class="tl-title">🥐 朝食 — 昨日選んだパン</div>
             <div class="tl-brief">昨日の選択が、今朝を特別にする。</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item no-expand">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">9:00すぎ</div>
+            <div class="tl-title">🚗 宿を出発</div>
+            <div class="tl-brief">ニジゲンノモリまで約40分。10:00の開場に合わせて。</div>
           </div>
         </div>
       </div>
@@ -840,7 +866,7 @@
       </div>
       <div class="day-weather">
         <div class="temp" style="color:var(--coral)">🌧 24℃</div>
-        <div class="rain" style="color:var(--coral);font-weight:700">降水 80% ☔</div>
+        <div class="rain" style="color:var(--coral);font-weight:700">朝☔60〜70% 昼40〜80%</div>
       </div>
     </div>
 
@@ -911,27 +937,87 @@
 <div id="tab-weather" class="tab-content">
   <div class="container">
     <div style="padding-top: 24px;">
-      <div class="weather-note">※5/18 最新更新 | ウェザーニュース 淡路市ベース</div>
-      <div class="weather-row">
-        <div class="w-date">5/19（火）Day 1</div>
-        <div class="w-icon">☀️</div>
-        <div class="w-desc">晴れ時々曇 — 午前は快晴、午後少し曇</div>
-        <div class="w-temp">28℃</div>
-        <div class="w-rain">20%</div>
+      <div class="weather-note">※5/18 最新更新 | ウェザーニュース＋tenki.jp 淡路市</div>
+
+      <div class="weather-card">
+        <div class="weather-card-header">
+          <span class="wc-day">5/19（火）Day 1</span>
+          <span class="wc-summary fine">☀️ 終日晴れ　最高28℃</span>
+        </div>
+        <div class="weather-timeslots">
+          <div class="weather-slot">
+            <div class="ws-label">朝</div>
+            <div class="ws-icon">☀️</div>
+            <div class="ws-temp">17℃</div>
+            <div class="ws-rain">0%</div>
+          </div>
+          <div class="weather-slot">
+            <div class="ws-label">昼</div>
+            <div class="ws-icon">☀️</div>
+            <div class="ws-temp">28℃</div>
+            <div class="ws-rain">0〜10%</div>
+          </div>
+          <div class="weather-slot">
+            <div class="ws-label">夜</div>
+            <div class="ws-icon">🌤</div>
+            <div class="ws-temp">21℃</div>
+            <div class="ws-rain">10%</div>
+          </div>
+        </div>
       </div>
-      <div class="weather-row">
-        <div class="w-date">5/20（水）Day 2</div>
-        <div class="w-icon">🌧</div>
-        <div class="w-desc">曇時々雨 — 傘があると安心</div>
-        <div class="w-temp">21℃</div>
-        <div class="w-rain danger">60% ☔</div>
+
+      <div class="weather-card">
+        <div class="weather-card-header">
+          <span class="wc-day">5/20（水）Day 2</span>
+          <span class="wc-summary rain">☔ 昼が本番　最高22℃</span>
+        </div>
+        <div class="weather-timeslots">
+          <div class="weather-slot">
+            <div class="ws-label">朝</div>
+            <div class="ws-icon">🌥</div>
+            <div class="ws-temp">19℃</div>
+            <div class="ws-rain warn">30〜60%</div>
+          </div>
+          <div class="weather-slot">
+            <div class="ws-label">昼</div>
+            <div class="ws-icon">🌧</div>
+            <div class="ws-temp">22℃</div>
+            <div class="ws-rain danger">60〜80% ☔</div>
+          </div>
+          <div class="weather-slot">
+            <div class="ws-label">夜</div>
+            <div class="ws-icon">🌧</div>
+            <div class="ws-temp">19℃</div>
+            <div class="ws-rain warn">40〜60%</div>
+          </div>
+        </div>
       </div>
-      <div class="weather-row">
-        <div class="w-date">5/21（木）Day 3</div>
-        <div class="w-icon">🌧</div>
-        <div class="w-desc">曇時々雨 — 傘必須</div>
-        <div class="w-temp">24℃</div>
-        <div class="w-rain danger">80% ☔</div>
+
+      <div class="weather-card">
+        <div class="weather-card-header">
+          <span class="wc-day">5/21（木）Day 3</span>
+          <span class="wc-summary rain">☔ 朝が雨ピーク　最高24℃</span>
+        </div>
+        <div class="weather-timeslots">
+          <div class="weather-slot">
+            <div class="ws-label">朝</div>
+            <div class="ws-icon">🌧</div>
+            <div class="ws-temp">20℃</div>
+            <div class="ws-rain danger">60〜70% ☔</div>
+          </div>
+          <div class="weather-slot">
+            <div class="ws-label">昼</div>
+            <div class="ws-icon">🌦</div>
+            <div class="ws-temp">24℃</div>
+            <div class="ws-rain warn">40〜80%</div>
+          </div>
+          <div class="weather-slot">
+            <div class="ws-label">夜</div>
+            <div class="ws-icon">🌥</div>
+            <div class="ws-temp">20℃</div>
+            <div class="ws-rain">40%</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
