@@ -152,6 +152,20 @@
     .divider { height: 1px; background: linear-gradient(to right, transparent, var(--sky), transparent); margin: 32px 0; }
     .info-card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 2px 16px rgba(26,39,68,0.07); margin-bottom: 16px; }
     .footer { text-align: center; padding: 48px 24px 60px; color: #aaa; font-size: 12px; letter-spacing: 2px; }
+
+    /* DRIVER MEMO */
+    .driver-card { background: white; border-radius: 14px; padding: 18px 20px; margin-bottom: 10px; box-shadow: 0 1px 8px rgba(26,39,68,0.06); }
+    .driver-card-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sea); margin-bottom: 12px; }
+    .route-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .route-table td { padding: 8px 6px; border-bottom: 1px solid #f2f2f2; vertical-align: middle; }
+    .route-table tr:last-child td { border-bottom: none; }
+    .route-from { color: #555; }
+    .route-time { font-weight: 700; color: var(--navy); text-align: center; white-space: nowrap; padding: 0 10px; }
+    .route-note { color: #aaa; font-size: 11px; }
+    .park-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f2f2f2; font-size: 12px; }
+    .park-row:last-child { border-bottom: none; }
+    .park-name { flex: 1; color: var(--navy); font-weight: 500; }
+    .park-info { color: #888; font-size: 11px; text-align: right; min-width: 140px; }
   </style>
 </head>
 <body>
@@ -259,6 +273,138 @@
 
   <div class="divider"></div>
 
+  <!-- ===== ドライバーメモ ===== -->
+  <div class="section-title">
+    <div class="icon" style="background:#edfff0">🚗</div>
+    <h2>ドライバーメモ</h2>
+    <div class="line"></div>
+  </div>
+
+  <!-- 区間所要時間 -->
+  <div class="driver-card">
+    <div class="driver-card-title">📍 区間ごとの所要時間（渋滞なし想定）</div>
+    <table class="route-table">
+      <tr>
+        <td class="route-from">新神戸 → 道の駅あわじ</td>
+        <td class="route-time">約45分</td>
+        <td class="route-note">神戸淡路鳴門道・明石海峡大橋経由</td>
+      </tr>
+      <tr>
+        <td class="route-from">道の駅あわじ → 岩屋温泉（宿）</td>
+        <td class="route-time">約2分</td>
+        <td class="route-note">ほぼ同エリア。徒歩圏内</td>
+      </tr>
+      <tr>
+        <td class="route-from">宿 → 夢舞台</td>
+        <td class="route-time">約25分</td>
+        <td class="route-note">国道28号を南下</td>
+      </tr>
+      <tr>
+        <td class="route-from">夢舞台 → アクアイグニス（DQ）</td>
+        <td class="route-time">約3分</td>
+        <td class="route-note">ニジゲンノモリ内、ほぼ同敷地</td>
+      </tr>
+      <tr>
+        <td class="route-from">アクアイグニス → 宿</td>
+        <td class="route-time">約30分</td>
+        <td class="route-note">国道28号を北上</td>
+      </tr>
+      <tr>
+        <td class="route-from">宿 → 本福寺</td>
+        <td class="route-time">約15分</td>
+        <td class="route-note">淡路市北部・一般道</td>
+      </tr>
+      <tr>
+        <td class="route-from">本福寺 → 花さじき</td>
+        <td class="route-time">約25分</td>
+        <td class="route-note">山越え・細道あり。ゆっくり走る</td>
+      </tr>
+      <tr>
+        <td class="route-from">花さじき → 幸せのパンケーキ</td>
+        <td class="route-time">約15分</td>
+        <td class="route-note">南下・国道28号方面</td>
+      </tr>
+      <tr>
+        <td class="route-from">DQアイランド → シマウマバーガー</td>
+        <td class="route-time">約15分</td>
+        <td class="route-note">北淡IC経由・国道28号</td>
+      </tr>
+      <tr>
+        <td class="route-from">岩屋温泉 → 新神戸（Day3）</td>
+        <td class="route-time">約50分</td>
+        <td class="route-note">雨天時+10〜15分で計算する</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 駐車場 -->
+  <div class="driver-card">
+    <div class="driver-card-title">🅿️ 駐車場まとめ</div>
+    <div class="park-row">
+      <div class="park-name">道の駅あわじ</div>
+      <div class="park-info">無料・広い（200台超）</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">夢舞台</div>
+      <div class="park-info">有料・普通車 500〜600円</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">ニジゲンノモリ（DQ・アクアイグニス）</div>
+      <div class="park-info">有料・1日最大 500〜1,000円</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">本福寺 水御堂</div>
+      <div class="park-info">無料・数台のみ。早めに</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">花さじき</div>
+      <div class="park-info">無料・広い</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">幸せのパンケーキ 淡路島テラス</div>
+      <div class="park-info">場内あり（有料の場合あり）</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">シマウマバーガー</div>
+      <div class="park-info">無料</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">岩屋温泉 絵島別庭（宿）</div>
+      <div class="park-info">宿泊者無料</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">タイムズJR新神戸駅前（ピックアップ待機）</div>
+      <div class="park-info">30分以内無料 ⚡</div>
+    </div>
+  </div>
+
+  <!-- 高速・ガソリン -->
+  <div class="driver-card">
+    <div class="driver-card-title">💴 高速料金・ガソリン・注意事項</div>
+    <div class="park-row">
+      <div class="park-name">🌉 明石海峡大橋 ETC料金</div>
+      <div class="park-info">片道 約2,570円<br>往復 約5,140円</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">⛽ 給油タイミング</div>
+      <div class="park-info">新神戸周辺で満タンに。淡路島内（特に南部）はGS少ない</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">🗺 淡路島内の道路</div>
+      <div class="park-info">ほぼ国道28号。高速区間なし。渋滞少ない</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">☔ Day2・3 雨天注意</div>
+      <div class="park-info">花さじき周辺・山道は視界悪め。速度控えめに</div>
+    </div>
+    <div class="park-row">
+      <div class="park-name">🚗 Day3 レンタカー返却</div>
+      <div class="park-info">ANAクラウンプラザ5F。ガソリン満タン返し要確認</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
   <!-- ===== DAY 0 ===== -->
   <div class="day-header">
     <div class="day-num" style="color:#888">0</div>
@@ -310,8 +456,8 @@
       <div class="day-title">神戸 → 淡路島へ</div>
     </div>
     <div class="day-weather">
-      <div class="temp">☀️ 28℃</div>
-      <div class="rain">降水 20%（WN）</div>
+      <div class="temp" style="color:var(--coral)">🌧 24℃</div>
+      <div class="rain" style="color:var(--coral);font-weight:700">降水 80%</div>
     </div>
   </div>
 
@@ -540,27 +686,28 @@
     <div class="line"></div>
   </div>
 
-  <div style="font-size:11px;color:#aaa;margin-bottom:8px;padding:0 4px">※ウェザーニュース基準（5/16更新）/ tenki.jp参考値を併記</div>
+  <div style="font-size:11px;color:#aaa;margin-bottom:8px;padding:0 4px">※5/18 最新更新 | ウェザーニュース／tenki.jp 両サイト参照</div>
+  <div class="notice important" style="margin-bottom:12px;">⚠️ Day1も雨に変化。サングラス不要・傘を3日間持参</div>
   <div class="weather-row">
     <div class="w-date">5/19（火）</div>
-    <div class="w-icon">☀️</div>
-    <div class="w-desc">晴時々曇 — WN:20% / tenki:70〜80%</div>
-    <div class="w-temp">28℃</div>
-    <div class="w-rain">20%</div>
+    <div class="w-icon">🌧</div>
+    <div class="w-desc">雨 — 両サイト80%一致。前回予報から大幅変化</div>
+    <div class="w-temp">24℃</div>
+    <div class="w-rain danger">80% ☔</div>
   </div>
   <div class="weather-row">
     <div class="w-date">5/20（水）</div>
     <div class="w-icon">🌧</div>
-    <div class="w-desc">曇時々雨 — WN:60% / tenki:80%</div>
-    <div class="w-temp">26℃</div>
+    <div class="w-desc">曇時々雨 — 60%</div>
+    <div class="w-temp">20℃</div>
     <div class="w-rain danger">60% ☔</div>
   </div>
   <div class="weather-row">
     <div class="w-date">5/21（木）</div>
     <div class="w-icon">🌧</div>
-    <div class="w-desc">雨 — WN:60% / tenki:90%</div>
-    <div class="w-temp">23℃</div>
-    <div class="w-rain danger">60% ☔</div>
+    <div class="w-desc">雨 — 80%</div>
+    <div class="w-temp">24℃</div>
+    <div class="w-rain danger">80% ☔</div>
   </div>
 
   <div class="divider"></div>
