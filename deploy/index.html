@@ -101,7 +101,6 @@
       width: 2px; background: linear-gradient(to bottom, var(--sea), var(--sky), transparent); border-radius: 2px;
     }
 
-    /* expandable timeline item */
     .tl-item {
       position: relative; margin-bottom: 12px; background: white;
       border-radius: 14px; box-shadow: 0 1px 8px rgba(26,39,68,0.06);
@@ -129,13 +128,9 @@
     }
     .tl-item.open .expand-icon { transform: rotate(45deg); color: var(--sea); }
 
-    .tl-detail {
-      max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
-    }
-    .tl-detail-inner {
-      padding: 0 16px 16px; border-top: 1px solid #f5f5f5;
-    }
-    .tl-desc { font-size: 13px; color: #555; line-height: 1.8; margin-bottom: 10px; padding-top: 12px; }
+    .tl-detail { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .tl-detail-inner { padding: 0 16px 16px; border-top: 1px solid #f5f5f5; }
+    .tl-desc { font-size: 13px; color: #555; line-height: 1.9; margin-bottom: 10px; padding-top: 12px; }
     .tl-tips { display: flex; flex-direction: column; gap: 6px; }
     .tl-tip { display: flex; gap: 8px; font-size: 12px; color: #666; }
     .tl-tip-icon { font-size: 14px; flex-shrink: 0; line-height: 1.6; }
@@ -162,7 +157,7 @@
     .hotel-card { color: white; border-radius: 16px; padding: 24px; margin-bottom: 16px; }
     .hotel-eyebrow { font-size: 10px; letter-spacing: 3px; opacity: 0.6; margin-bottom: 8px; text-transform: uppercase; }
     .hotel-name { font-family: 'Noto Serif JP', serif; font-size: 18px; margin-bottom: 6px; letter-spacing: 1px; }
-    .hotel-copy { font-size: 13px; opacity: 0.85; line-height: 1.8; margin-bottom: 14px; }
+    .hotel-copy { font-size: 13px; opacity: 0.85; line-height: 1.9; margin-bottom: 14px; }
     .hotel-details { display: flex; gap: 8px; flex-wrap: wrap; }
     .hotel-detail-item { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 4px 12px; font-size: 12px; }
 
@@ -227,7 +222,7 @@
 <div class="hero">
   <div class="hero-label">Travel Itinerary</div>
   <h1>神戸・淡路島の旅</h1>
-  <div class="hero-tagline">海と緑と温泉。淡路島2泊3日</div>
+  <div class="hero-tagline">2泊3日、ぜんぶあなたのために用意した。</div>
   <div class="hero-dates">2026.5.19 — 5.21 ｜ 2泊3日</div>
   <div class="hero-badges">
     <span class="badge">🌊 岩屋温泉</span>
@@ -236,28 +231,27 @@
   </div>
 </div>
 
-<!-- ── HIGHLIGHTS（タブ外・常時表示）── -->
 <div class="container" style="padding-top: 0;">
   <div class="highlights" style="margin-top: 28px;">
     <div class="hl-card" style="background: linear-gradient(135deg, #1a5c7a, #2e9fc7)">
       <div class="hl-emoji">🦐</div>
-      <div class="hl-title">淡路島 海鮮丼</div>
-      <div class="hl-sub">Day 1 · 上陸1発目</div>
+      <div class="hl-title">橋を渡ったら、海鮮丼</div>
+      <div class="hl-sub">Day 1 · 最初の一口</div>
     </div>
     <div class="hl-card" style="background: linear-gradient(135deg, #3a6b4a, #5a9b6a)">
       <div class="hl-emoji">♨️</div>
-      <div class="hl-title">岩屋温泉 2泊</div>
-      <div class="hl-sub">海を見渡す温泉旅館</div>
+      <div class="hl-title">海が見える温泉</div>
+      <div class="hl-sub">2泊とも、ここに帰ってくる</div>
     </div>
     <div class="hl-card" style="background: linear-gradient(135deg, #7a3a1a, #c96a2a)">
       <div class="hl-emoji">🐉</div>
-      <div class="hl-title">DQアイランド</div>
-      <div class="hl-sub">Day 2 · 森の中の冒険</div>
+      <div class="hl-title">森の中でドラクエ</div>
+      <div class="hl-sub">Day 2 · 大人も夢中になる</div>
     </div>
     <div class="hl-card" style="background: linear-gradient(135deg, #5a3a7a, #9a5ab0)">
       <div class="hl-emoji">🥞</div>
-      <div class="hl-title">幸せのパンケーキ</div>
-      <div class="hl-sub">Day 1 · 夕暮れのテラスで</div>
+      <div class="hl-title">口の中でとけるパンケーキ</div>
+      <div class="hl-sub">Day 1 · 夕暮れの海で</div>
     </div>
   </div>
 </div>
@@ -273,9 +267,7 @@
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     DAY 1
-════════════════════════════════ -->
+<!-- ════════════ DAY 1 ════════════ -->
 <div id="tab-day1" class="tab-content active">
   <div class="container">
 
@@ -291,10 +283,10 @@
       </div>
     </div>
 
-    <!-- 新神戸駅 案内 -->
+    <!-- 新神戸駅 -->
     <div class="station-card">
       <div class="label">Departure · 10:00</div>
-      <div class="title">🚄 新神戸駅 集合</div>
+      <div class="title">🚄 新神戸駅で待ってる</div>
       <div class="station-steps">
         <div class="station-step">
           <div class="step-num">1</div>
@@ -302,11 +294,11 @@
         </div>
         <div class="station-step">
           <div class="step-num">2</div>
-          <div class="step-text">そのまま外（<strong>2Fロータリー出口</strong>）へ。扉を出てすぐのロータリーで待っていて</div>
+          <div class="step-text">そのまま外（<strong>2Fロータリー出口</strong>）へ。出てすぐのロータリーで待っていて</div>
         </div>
         <div class="station-step">
           <div class="step-num">3</div>
-          <div class="step-text">着いたら <strong>LINEください</strong> 🚗 すぐ迎えに行きます</div>
+          <div class="step-text">着いたら <strong>LINEください</strong>、すぐそこまで行く 🚗</div>
         </div>
       </div>
       <div class="station-note">📍 JR新神戸駅 2F ロータリー（北口）</div>
@@ -316,7 +308,7 @@
     <div class="hotel-card" style="background: linear-gradient(135deg, #2d5a3d, var(--green));">
       <div class="hotel-eyebrow">5月19日〜21日 ｜ 2泊</div>
       <div class="hotel-name">岩屋温泉 絵島別庭 海と森</div>
-      <div class="hotel-copy">目の前に海、背後に深い緑。淡路島の最北端に佇む温泉旅館。夕食は懐石、朝は波の音で目覚める2泊。</div>
+      <div class="hotel-copy">部屋に入ったら、まず窓を開けてほしい。<br>橋と海が、そのままそこにある。<br>温泉に入って、懐石を食べて、眠る2泊。</div>
       <div class="hotel-details">
         <span class="hotel-detail-item">♨️ 温泉</span>
         <span class="hotel-detail-item">🍽 夕食・朝食付き</span>
@@ -326,7 +318,6 @@
 
     <div class="divider"></div>
 
-    <!-- TIMELINE -->
     <div class="timeline">
 
       <!-- 道の駅あわじ -->
@@ -335,17 +326,17 @@
           <div class="tl-header-text">
             <div class="tl-time">11:00</div>
             <div class="tl-title">🦐 道の駅あわじ／えびす丸</div>
-            <div class="tl-brief">淡路島上陸1発目。獲れたて海鮮丼</div>
+            <div class="tl-brief">橋を渡ったらすぐここ。海の前で食べる。</div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
         <div class="tl-detail">
           <div class="tl-detail-inner">
-            <div class="tl-desc">明石海峡大橋をバックに食べる海鮮丼が名物。淡路島に渡ってすぐのスポットで、空腹のまま臨むのが正解。橋を眺めながら食べる最初の一口が最高。</div>
+            <div class="tl-desc">明石海峡大橋が、食べながらずっと見えてる。淡路島に来てすぐここに寄るのは、その最初の一口のためだけと言ってもいい。おなかを空かせて来てほしい理由がある。</div>
             <div class="tl-tips">
               <div class="tl-tip"><div class="tl-tip-icon">🍣</div><div>おすすめ：特上海鮮丼 / うにいくら丼 / まぐろ丼</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">📸</div><div>明石海峡大橋×海鮮丼の写真、映えます</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">⏰</div><div>11時台は比較的空いてる。12時以降は混雑注意</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">📸</div><div>橋をバックに撮ると、どう撮ってもいい写真になる</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">⏰</div><div>11時台は空いてる。12時を過ぎると混む</div></div>
             </div>
             <div class="tl-address">📍 〒656-1521 兵庫県淡路市岩屋925-1</div>
             <div class="tl-tags"><span class="tl-tag food">食事</span></div>
@@ -359,17 +350,17 @@
           <div class="tl-header-text">
             <div class="tl-time">13:00</div>
             <div class="tl-title">🌿 夢舞台</div>
-            <div class="tl-brief">安藤忠雄設計の白亜のガーデン</div>
+            <div class="tl-brief">ここどこ、と思う場所。</div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
         <div class="tl-detail">
           <div class="tl-detail-inner">
-            <div class="tl-desc">安藤忠雄が設計した広大な庭園施設。棚田状に花が咲く「百段苑」が圧巻。地中海を思わせる白い建物と海の景色が、ここが日本であることを一瞬忘れさせる。</div>
+            <div class="tl-desc">白い建物と花と海だけが視界に入って、日本にいることを一瞬忘れる。安藤忠雄が設計した広大な庭園で、棚田みたいに段々と花が咲いてる。ぼーっと歩くだけで十分な場所。</div>
             <div class="tl-tips">
-              <div class="tl-tip"><div class="tl-tip-icon">🌺</div><div>5月はバラが見頃。百段苑の花の棚田は必見</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">🏨</div><div>ウェスティンホテル淡路に隣接。海を一望するテラスも</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">🆓</div><div>屋外エリアは入場無料（一部施設は有料）</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🌺</div><div>5月はバラが見頃。百段苑の段々花壇は必見</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🌊</div><div>海を一望できるテラスがある</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🆓</div><div>屋外エリアは入場無料</div></div>
             </div>
             <div class="tl-address">📍 〒656-2306 兵庫県淡路市夢舞台2番地</div>
           </div>
@@ -382,16 +373,16 @@
           <div class="tl-header-text">
             <div class="tl-time">14:30</div>
             <div class="tl-title">🥐 アクアイグニス淡路</div>
-            <div class="tl-brief">翌朝の朝食パンを仕入れる</div>
+            <div class="tl-brief">明日の朝ごはんを、ここで選ぶ。</div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
         <div class="tl-detail">
           <div class="tl-detail-inner">
-            <div class="tl-desc">辻口博啓シェフ監修のパン・スイーツ専門店。明日の朝食用にここでパンを購入しておく。宿で食べる朝ごはんが一気に特別なものになる。</div>
+            <div class="tl-desc">焼きたての香りが漂う店で、明日の朝を想像しながらパンを選ぶ。その選ぶ時間も、もう旅の一部になってる。</div>
             <div class="tl-tips">
-              <div class="tl-tip"><div class="tl-tip-icon">🍞</div><div>クロワッサン・デニッシュが特に人気</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">🐉</div><div>DQアイランド（ニジゲンノモリ）と同じ敷地内</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🍞</div><div>クロワッサン・デニッシュが人気。迷ったら両方</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🐉</div><div>DQアイランドと同じ敷地内にある</div></div>
             </div>
             <div class="tl-address">📍 〒656-2307 兵庫県淡路市楠本2425-2</div>
           </div>
@@ -404,17 +395,17 @@
           <div class="tl-header-text">
             <div class="tl-time">15:00</div>
             <div class="tl-title">🏨 チェックイン</div>
-            <div class="tl-brief">今夜から2泊、海を独占する宿へ</div>
+            <div class="tl-brief">窓を開けた瞬間から、始まってる。</div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
         <div class="tl-detail">
           <div class="tl-detail-inner">
-            <div class="tl-desc">岩屋温泉 絵島別庭 海と森。淡路島の最北端、岩屋エリアに佇む温泉旅館。部屋から明石海峡大橋と海を一望できる。</div>
+            <div class="tl-desc">淡路島の最北端に佇む温泉旅館。部屋に入ったら、まず窓の前に立ってほしい。橋と海が、そのままそこにある。</div>
             <div class="tl-tips">
-              <div class="tl-tip"><div class="tl-tip-icon">♨️</div><div>天然温泉は源泉かけ流し。チェックイン後すぐ入れる</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">🍽</div><div>夕食は旬の食材を使った淡路島懐石</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">🌅</div><div>夕方の海と橋の景色がとても綺麗</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">♨️</div><div>源泉かけ流しの天然温泉。荷物を置いたらすぐ入れる</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🍽</div><div>夕食は淡路島の旬を使った懐石</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🌅</div><div>夕方になると、海と橋の色が変わる。見逃さないで</div></div>
             </div>
             <div class="tl-address">📍 〒656-2401 兵庫県淡路市岩屋922-1</div>
             <div class="tl-tags"><span class="tl-tag stay">2泊</span></div>
@@ -428,16 +419,16 @@
           <div class="tl-header-text">
             <div class="tl-time">15:30</div>
             <div class="tl-title">⛩ 本福寺 水御堂</div>
-            <div class="tl-brief">蓮の池を割って地下へ、安藤建築の傑作</div>
+            <div class="tl-brief">池を二つに割って、地下へ。</div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
         <div class="tl-detail">
           <div class="tl-detail-inner">
-            <div class="tl-desc">安藤忠雄設計の唯一無二のお寺。蓮の池の中央を二分して、地下の礼拝堂へ下りていく体験が印象的。地下に入ると朱色に染まる荘厳な空間が広がる。</div>
+            <div class="tl-desc">蓮の池の真ん中を歩いて、地下へ降りていく。朱色に染まった静かな空間に、言葉にしにくい感覚が残る。安藤忠雄が設計した、唯一無二の体験。</div>
             <div class="tl-tips">
-              <div class="tl-tip"><div class="tl-tip-icon">🪷</div><div>5〜6月は蓮の花が池一面に咲く時期</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">📸</div><div>礼拝堂内は撮影NG。目に焼き付けて</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🪷</div><div>5月の蓮はまだ咲き始め。それでも十分、きれい</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">📸</div><div>礼拝堂の中は撮影NG。目に焼き付けて</div></div>
               <div class="tl-tip"><div class="tl-tip-icon">🎫</div><div>拝観料あり（約500円）/ 所要15〜30分</div></div>
             </div>
             <div class="tl-address">📍 〒656-1521 兵庫県淡路市浦1309</div>
@@ -451,17 +442,17 @@
           <div class="tl-header-text">
             <div class="tl-time">17:00</div>
             <div class="tl-title">🌸 花さじき</div>
-            <div class="tl-brief">100万本の花が咲く高台。淡路島を一望</div>
+            <div class="tl-brief">高台に出た瞬間、深呼吸したくなる。</div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
         <div class="tl-detail">
           <div class="tl-detail-inner">
-            <div class="tl-desc">国営明石海峡公園の一部。淡路島内陸の高台にあり、丘一面に広がる花畑と海の絶景が楽しめる。5月はネモフィラ・ポピーが最盛期。</div>
+            <div class="tl-desc">花と海と空だけが視界に入る場所。淡路島でいちばん、空気がおいしいかもしれない。5月が最盛期。</div>
             <div class="tl-tips">
-              <div class="tl-tip"><div class="tl-tip-icon">🌺</div><div>5月は花の最盛期。写真スポットとしても最高</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🌺</div><div>どこを切り取っても、ちゃんと絵になる</div></div>
               <div class="tl-tip"><div class="tl-tip-icon">🆓</div><div>入場無料</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">🌇</div><div>夕暮れ時の光がとくに美しい時間帯</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🌇</div><div>夕暮れになると、光が全部オレンジになる</div></div>
             </div>
             <div class="tl-address">📍 〒656-1724 兵庫県淡路市楠本2805-7</div>
           </div>
@@ -474,17 +465,17 @@
           <div class="tl-header-text">
             <div class="tl-time">18:00</div>
             <div class="tl-title">🥞 幸せのパンケーキ 淡路島テラス</div>
-            <div class="tl-brief">ふるふる・しゅわしゅわ。夕暮れの淡路で</div>
+            <div class="tl-brief">口に入れた瞬間、しゅわっと消える。</div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
         <div class="tl-detail">
           <div class="tl-detail-inner">
-            <div class="tl-desc">メレンゲをたっぷり使った「生」パンケーキ。外はカリっ、中はしゅわしゅわとろける唯一無二の食感。テラス席から見る夕日と海の景色が最高の一皿を演出する。</div>
+            <div class="tl-desc">夕暮れの海を見ながら食べると、なぜかもっとおいしくなる。メレンゲをたっぷり使った生パンケーキは、外がカリっ、中はしゅわしゅわ。この感覚、ここでしか食べられない。</div>
             <div class="tl-tips">
-              <div class="tl-tip"><div class="tl-tip-icon">🥞</div><div>おすすめ：プレミアムパンケーキ（生クリーム添え）</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">🌅</div><div>テラス席がとれたら海側がおすすめ</div></div>
-              <div class="tl-tip"><div class="tl-tip-icon">⏰</div><div>夕方18時前後は比較的空いている</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🥞</div><div>プレミアムパンケーキ（生クリーム添え）がおすすめ</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🌅</div><div>テラス席の海側に座れたら、それだけでもう完璧</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">⏰</div><div>18時前後は比較的ゆったり入れる</div></div>
             </div>
             <div class="tl-address">📍 〒656-1501 兵庫県淡路市尾崎42-1</div>
             <div class="tl-tags"><span class="tl-tag food">スイーツ</span></div>
@@ -492,24 +483,22 @@
         </div>
       </div>
 
-      <!-- 夕食・温泉 -->
+      <!-- 夕食 -->
       <div class="tl-item no-expand">
         <div class="tl-header">
           <div class="tl-header-text">
             <div class="tl-time">夜</div>
             <div class="tl-title">🍽 宿 夕食 ＋ 温泉</div>
-            <div class="tl-brief">懐石料理と夜の温泉。明日への英気を養う</div>
+            <div class="tl-brief">今日のご褒美。</div>
           </div>
         </div>
       </div>
 
-    </div><!-- /timeline -->
+    </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     DAY 2
-════════════════════════════════ -->
+<!-- ════════════ DAY 2 ════════════ -->
 <div id="tab-day2" class="tab-content">
   <div class="container">
 
@@ -520,25 +509,23 @@
         <div class="day-title">淡路島満喫</div>
       </div>
       <div class="day-weather">
-        <div class="temp" style="color:var(--coral)">🌧 20℃</div>
+        <div class="temp" style="color:var(--coral)">🌧 21℃</div>
         <div class="rain" style="color:var(--coral);font-weight:700">降水 60% ☔</div>
       </div>
     </div>
 
-    <!-- 朝食 -->
     <div class="timeline" style="margin-bottom: 20px;">
       <div class="tl-item no-expand">
         <div class="tl-header">
           <div class="tl-header-text">
             <div class="tl-time">朝</div>
-            <div class="tl-title">🥐 朝食 — アクアイグニスのパン</div>
-            <div class="tl-brief">昨日買ったパンで贅沢な宿の朝</div>
+            <div class="tl-title">🥐 朝食 — 昨日選んだパン</div>
+            <div class="tl-brief">昨日の選択が、今朝を特別にする。</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- プラン選択 -->
     <div class="section-title">
       <div class="icon" style="background:#fff8e8">🗂</div>
       <h2>今日のプランを選んで</h2>
@@ -547,55 +534,52 @@
     <div class="plan-intro">DQアイランドとシマウマバーガー、どっちをどう攻める？</div>
 
     <div class="plan-cards">
-      <!-- Plan A -->
       <div class="plan-card active" onclick="selectPlan('a')">
         <div class="plan-card-header">
           <div class="plan-badge">プランA</div>
-          <div class="plan-card-title">🐉 DQをとことん楽しむ</div>
+          <div class="plan-card-title">🐉 DQの世界にどっぷり</div>
           <div class="plan-check">✓</div>
         </div>
         <div class="plan-card-sub">4時間フルコース → ルイーダの酒場でランチ</div>
       </div>
-      <!-- Plan B -->
       <div class="plan-card" onclick="selectPlan('b')">
         <div class="plan-card-header">
           <div class="plan-badge">プランB</div>
           <div class="plan-card-title">🍔 DQ堪能 → シマウマで締め</div>
           <div class="plan-check">✓</div>
         </div>
-        <div class="plan-card-sub">DQ 2.5h → 移動15分 → 余裕のシマウマバーガー</div>
+        <div class="plan-card-sub">DQ 2.5h → 余裕でシマウマバーガー</div>
       </div>
-      <!-- Plan C -->
       <div class="plan-card" onclick="selectPlan('c')">
         <div class="plan-card-header">
           <div class="plan-badge">プランC</div>
-          <div class="plan-card-title">🚀 シマウマ確実確保</div>
+          <div class="plan-card-title">🚀 シマウマを先に確保</div>
           <div class="plan-check">✓</div>
         </div>
-        <div class="plan-card-sub">DQクイック体験 → 開店ダッシュで品切れゼロ</div>
+        <div class="plan-card-sub">DQクイック → 開店ダッシュで品切れゼロ</div>
       </div>
     </div>
 
-    <!-- Plan A タイムライン -->
+    <!-- Plan A -->
     <div id="plan-a" class="plan-timeline active">
-      <div class="notice tip">🐉 DQをフルで堪能する日。ルイーダの酒場でランチまで完結。品切れ心配なし。</div>
+      <div class="notice tip">🐉 DQをとことん楽しむ日。食事まで全部ドラクエの世界で完結。</div>
       <div class="timeline">
         <div class="tl-item gold" onclick="toggleItem(this)">
           <div class="tl-header">
             <div class="tl-header-text">
               <div class="tl-time">10:00〜14:00</div>
               <div class="tl-title">🐉 DQアイランド フルコース</div>
-              <div class="tl-brief">メインクエスト＋ロトの記憶ラリーまで攻略</div>
+              <div class="tl-brief">本物の森の中で、ドラクエが始まる。</div>
             </div>
             <div class="expand-icon">＋</div>
           </div>
           <div class="tl-detail">
             <div class="tl-detail-inner">
-              <div class="tl-desc">城下町 → 北の森 → 神殿 → 魔王城を実際に歩いて冒険するフィールドRPG体験。スマホをコントローラーにモンスターを倒し、謎を解きながら魔王討伐を目指す。<br><br><strong>🆕 2026年4月〜 リメイク版「いにしえの魔神と導かれし冒険者たち」公開中</strong>（40周年×5周年）。DQ I&IIコラボ「よみがえるロトの記憶ラリー」も同時開催。</div>
+              <div class="tl-desc">本物の木々に囲まれながら、スマホでモンスターを倒していく。城下町 → 北の森 → 神殿 → 魔王城を歩いて進むフィールドRPG体験。やってみると、大人もふつうに夢中になってる。<br><br><strong>🆕 2026年4月〜 リメイク版「いにしえの魔神と導かれし冒険者たち」公開中</strong>（40周年×5周年）。DQ I&IIコラボ「よみがえるロトの記憶ラリー」も同時開催。</div>
               <div class="tl-tips">
-                <div class="tl-tip"><div class="tl-tip-icon">⏱</div><div>メインクエストだけで約2.5時間。ラリーも入れると4時間</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">☔</div><div>屋外コースだが、雨天でも実施（スマホとレインウェアがあれば快適）</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">📱</div><div>スマホをフル充電してから入場すること</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">⏱</div><div>メインクエストで約2.5時間。ラリーまで入れると4時間</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">☔</div><div>雨でも実施。スマホが濡れないようにだけ気をつけて</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">📱</div><div>スマホをフル充電して入ること。バッテリーが勝負を決める</div></div>
               </div>
               <div class="tl-address">📍 〒656-2307 兵庫県淡路市楠本2425-2（ニジゲンノモリ）</div>
             </div>
@@ -606,17 +590,16 @@
             <div class="tl-header-text">
               <div class="tl-time">14:00 頃</div>
               <div class="tl-title">🍺 ルイーダの酒場でランチ</div>
-              <div class="tl-brief">場内レストラン。DQモチーフメニューで締め</div>
+              <div class="tl-brief">魔王を倒した顔で、メニューを開く。</div>
             </div>
             <div class="expand-icon">＋</div>
           </div>
           <div class="tl-detail">
             <div class="tl-detail-inner">
-              <div class="tl-desc">DQアイランド場内のレストラン。入場チケット不要で利用可能。ドラクエのキャラクター・メニューが充実しており、冒険の余韻を味わいながら食べられる。</div>
+              <div class="tl-desc">冒険の余韻のまま、ドラクエの世界観でご飯が食べられる。場内レストランだけど、チケットなしで入れる。</div>
               <div class="tl-tips">
                 <div class="tl-tip"><div class="tl-tip-icon">🍛</div><div>玉ねぎキーマカレー / ホロミット4世のランチボックス¥2,100</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">🍭</div><div>天空風わたあめドリンクも人気</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">👍</div><div>入場チケットなしで入れるのでシマウマ気分じゃない日もここで完結できる</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🍭</div><div>天空風わたあめドリンクも見た目がかわいい</div></div>
               </div>
             </div>
           </div>
@@ -625,33 +608,33 @@
           <div class="tl-header">
             <div class="tl-header-text">
               <div class="tl-time">15:00〜</div>
-              <div class="tl-title">✨ 午後フレキシブルタイム</div>
-              <div class="tl-brief">道の駅うずしお / ONOKORO / 宿で早め温泉</div>
+              <div class="tl-title">✨ 午後は気分のままに</div>
+              <div class="tl-brief">渦潮を見に行くか、温泉に戻るか。</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Plan B タイムライン -->
+    <!-- Plan B -->
     <div id="plan-b" class="plan-timeline">
-      <div class="notice tip">🍔 DQをしっかり楽しんだ後、余裕のタイミングでシマウマへ。品切れリスクも低い。</div>
+      <div class="notice tip">🍔 DQをしっかり楽しんでから、余裕の時間でシマウマへ。</div>
       <div class="timeline">
         <div class="tl-item gold" onclick="toggleItem(this)">
           <div class="tl-header">
             <div class="tl-header-text">
               <div class="tl-time">10:00〜12:30</div>
               <div class="tl-title">🐉 DQアイランド（2.5h）</div>
-              <div class="tl-brief">メインクエストをクリアして退場</div>
+              <div class="tl-brief">本物の森の中で、ドラクエが始まる。</div>
             </div>
             <div class="expand-icon">＋</div>
           </div>
           <div class="tl-detail">
             <div class="tl-detail-inner">
-              <div class="tl-desc">メインクエストに集中して攻略。城下町 → 北の森 → 神殿 → 魔王城のルートを歩きながら、スマホでモンスターを倒して魔王を討伐。</div>
+              <div class="tl-desc">メインクエストに集中して攻略。城下町 → 北の森 → 神殿 → 魔王城のルートを、スマホをコントローラーにして歩いて進む。大人もふつうに夢中になってる。</div>
               <div class="tl-tips">
                 <div class="tl-tip"><div class="tl-tip-icon">⏱</div><div>メインのみなら約2.5時間で完走できる</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">📱</div><div>スマホをフル充電してから入場</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">📱</div><div>スマホをフル充電して入ること</div></div>
               </div>
               <div class="tl-address">📍 〒656-2307 兵庫県淡路市楠本2425-2</div>
             </div>
@@ -662,7 +645,7 @@
             <div class="tl-header-text">
               <div class="tl-time">12:30</div>
               <div class="tl-title">🚗 移動（約15分）</div>
-              <div class="tl-brief">北淡ICを降りてシマウマバーガーへ</div>
+              <div class="tl-brief">北淡IC経由でシマウマバーガーへ</div>
             </div>
           </div>
         </div>
@@ -671,17 +654,16 @@
             <div class="tl-header-text">
               <div class="tl-time">13:00 頃</div>
               <div class="tl-title">🍔 シマウマバーガー</div>
-              <div class="tl-brief">余裕の時間帯で品切れリスク低。テラスで海風</div>
+              <div class="tl-brief">芝生に座って、海を見ながら食べる。</div>
             </div>
             <div class="expand-icon">＋</div>
           </div>
           <div class="tl-detail">
             <div class="tl-detail-inner">
-              <div class="tl-desc">淡路島産玉ねぎを低温でじっくり揚げたオニオンフライが主役のご当地バーガー。甘み・コク・サクサクの三重奏。海風を感じる開放的な芝生テラス席で食べられる。</div>
+              <div class="tl-desc">淡路島の玉ねぎが甘くて、それだけで特別になるバーガー。芝生に座って海を見ながら食べると、なんでもないことが贅沢になる。</div>
               <div class="tl-tips">
-                <div class="tl-tip"><div class="tl-tip-icon">🍔</div><div>おすすめ：ザ淡路牛プレミアムバーガー / 2種のあぶりチーズバーガー</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">⏰</div><div>営業時間 11:00〜17:00。13時台は余裕あり</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">🧅</div><div>淡路島玉ねぎの甘さを存分に楽しんで</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🍔</div><div>ザ淡路牛プレミアムバーガー / 2種のあぶりチーズバーガー</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">⏰</div><div>営業 11:00〜17:00。13時台は余裕あり</div></div>
               </div>
               <div class="tl-address">📍 〒656-1602 兵庫県淡路市育波459</div>
             </div>
@@ -691,33 +673,33 @@
           <div class="tl-header">
             <div class="tl-header-text">
               <div class="tl-time">14:30〜</div>
-              <div class="tl-title">✨ 午後フレキシブルタイム</div>
-              <div class="tl-brief">道の駅うずしお（渦潮ビュー）/ ONOKORO</div>
+              <div class="tl-title">✨ 午後は気分のままに</div>
+              <div class="tl-brief">渦潮を見に行くか、温泉に戻るか。</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Plan C タイムライン -->
+    <!-- Plan C -->
     <div id="plan-c" class="plan-timeline">
-      <div class="notice tip">🚀 シマウマバーガーを確実に食べたいなら開店ダッシュが最適。DQは午後にも楽しめる。</div>
+      <div class="notice tip">🚀 シマウマを確実に食べたい日。開店直後が品切れリスク最小。</div>
       <div class="timeline">
         <div class="tl-item" onclick="toggleItem(this)">
           <div class="tl-header">
             <div class="tl-header-text">
               <div class="tl-time">10:00〜11:30</div>
-              <div class="tl-title">🐉 DQアイランド クイック体験</div>
-              <div class="tl-brief">序盤〜中盤を楽しんで早めに退場</div>
+              <div class="tl-title">🐉 DQアイランド クイック</div>
+              <div class="tl-brief">序盤の世界を楽しんで、早めに切り上げる。</div>
             </div>
             <div class="expand-icon">＋</div>
           </div>
           <div class="tl-detail">
             <div class="tl-detail-inner">
-              <div class="tl-desc">DQアイランドを1.5時間でクイック体験。城下町〜北の森エリアまでを楽しんで、シマウマのために早めに切り上げる。続きは午後に戻って楽しめる。</div>
+              <div class="tl-desc">城下町〜北の森エリアを体験して、シマウマのために早めに出る。午後に戻って続きを楽しむ選択肢もある。</div>
               <div class="tl-tips">
-                <div class="tl-tip"><div class="tl-tip-icon">🔄</div><div>当日は再入場可能。午後に戻る選択肢もあり</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">📱</div><div>スマホをフル充電してから入場</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🔄</div><div>当日は再入場できる場合あり。午後に戻る選択肢も</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">📱</div><div>スマホをフル充電して入ること</div></div>
               </div>
               <div class="tl-address">📍 〒656-2307 兵庫県淡路市楠本2425-2</div>
             </div>
@@ -728,7 +710,7 @@
             <div class="tl-header-text">
               <div class="tl-time">11:30</div>
               <div class="tl-title">🚗 移動（約15分）</div>
-              <div class="tl-brief">北淡ICを降りてシマウマバーガーへ</div>
+              <div class="tl-brief">北淡IC経由でシマウマバーガーへ</div>
             </div>
           </div>
         </div>
@@ -736,18 +718,17 @@
           <div class="tl-header">
             <div class="tl-header-text">
               <div class="tl-time">11:45 頃</div>
-              <div class="tl-title">🍔 シマウマバーガー 開店ダッシュ！</div>
-              <div class="tl-brief">品切れリスク最小。開店直後の確実な一手</div>
+              <div class="tl-title">🍔 シマウマバーガー 開店直後</div>
+              <div class="tl-brief">品切れなし、芝生テラス、海。これが正解。</div>
             </div>
             <div class="expand-icon">＋</div>
           </div>
           <div class="tl-detail">
             <div class="tl-detail-inner">
-              <div class="tl-desc">開店（11:00）直後の時間帯は品切れリスクが最も低い。人気メニューをしっかり確保して、海テラスでゆっくり楽しめる。</div>
+              <div class="tl-desc">開店直後は品切れゼロ。淡路島の玉ねぎが甘くて、それだけで特別になるバーガー。芝生テラスで海を見ながら食べると、なんでもないことが贅沢になる。</div>
               <div class="tl-tips">
-                <div class="tl-tip"><div class="tl-tip-icon">✅</div><div>11時台〜12時台が品切れリスク最小の黄金タイム</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">🍔</div><div>おすすめ：ザ淡路牛プレミアムバーガー / 2種のあぶりチーズバーガー</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">🌿</div><div>芝生テラス席でのんびり食べよう</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">✅</div><div>11〜12時台が品切れリスク最小の時間帯</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🍔</div><div>ザ淡路牛プレミアムバーガー / 2種のあぶりチーズバーガー</div></div>
               </div>
               <div class="tl-address">📍 〒656-1602 兵庫県淡路市育波459 ｜ 11:00〜17:00</div>
             </div>
@@ -757,18 +738,18 @@
           <div class="tl-header">
             <div class="tl-header-text">
               <div class="tl-time">13:00〜</div>
-              <div class="tl-title">✨ 午後は選択肢豊富</div>
-              <div class="tl-brief">DQに戻る / 道の駅うずしお / ONOKORO</div>
+              <div class="tl-title">✨ 午後は選択肢いっぱい</div>
+              <div class="tl-brief">DQに戻る / 渦潮 / ONOKORO / 温泉</div>
             </div>
             <div class="expand-icon">＋</div>
           </div>
           <div class="tl-detail">
             <div class="tl-detail-inner">
               <div class="tl-tips">
-                <div class="tl-tip"><div class="tl-tip-icon">🐉</div><div><strong>DQアイランドに戻る</strong> — 午前の続き、残りのクエストを攻略</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">🌀</div><div><strong>道の駅うずしお</strong> — 鳴門海峡の渦潮を上から眺める絶景スポット</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">🎡</div><div><strong>ONOKORO</strong> — 淡路島のテーマパーク。乗り物・景色ともに楽しい</div></div>
-                <div class="tl-tip"><div class="tl-tip-icon">♨️</div><div><strong>宿で早め温泉</strong> — 贅沢にゆっくりするのもアリ</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🐉</div><div><strong>DQアイランドに戻る</strong> — 午前の続きを</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🌀</div><div><strong>道の駅うずしお</strong> — 鳴門の渦潮を上から見られる</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🎡</div><div><strong>ONOKORO</strong> — 淡路島のテーマパーク</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">♨️</div><div><strong>宿で早め温泉</strong> — 雨の日の一番の贅沢かもしれない</div></div>
               </div>
             </div>
           </div>
@@ -776,14 +757,13 @@
       </div>
     </div>
 
-    <!-- 夜 -->
     <div class="timeline" style="margin-top: 16px;">
       <div class="tl-item no-expand">
         <div class="tl-header">
           <div class="tl-header-text">
             <div class="tl-time">夜</div>
             <div class="tl-title">🍽 宿 夕食 ＋ 温泉</div>
-            <div class="tl-brief">最後の夜を温泉でゆっくり</div>
+            <div class="tl-brief">最後の夜も、温泉がある。</div>
           </div>
         </div>
       </div>
@@ -792,9 +772,7 @@
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     DAY 3
-════════════════════════════════ -->
+<!-- ════════════ DAY 3 ════════════ -->
 <div id="tab-day3" class="tab-content">
   <div class="container">
 
@@ -802,7 +780,7 @@
       <div class="day-num" style="color:var(--coral)">3</div>
       <div class="day-info">
         <div class="day-date">5月21日（木）</div>
-        <div class="day-title">帰宅日 ☔</div>
+        <div class="day-title">帰宅日</div>
       </div>
       <div class="day-weather">
         <div class="temp" style="color:var(--coral)">🌧 24℃</div>
@@ -810,15 +788,15 @@
       </div>
     </div>
 
-    <div class="notice rain">☔ 終日雨予報。傘を忘れずに</div>
+    <div class="notice rain">☔ 雨の日の帰り道も、旅の一部。傘を忘れずに。</div>
 
     <div class="timeline">
       <div class="tl-item no-expand">
         <div class="tl-header">
           <div class="tl-header-text">
             <div class="tl-time">午前</div>
-            <div class="tl-title">🏨 チェックアウト → 神戸方面へ</div>
-            <div class="tl-brief">最後の朝ごはんをゆっくり楽しんでから出発</div>
+            <div class="tl-title">🏨 チェックアウト → 神戸へ</div>
+            <div class="tl-brief">最後の朝ごはん。急がなくていい。</div>
           </div>
         </div>
       </div>
@@ -826,8 +804,8 @@
         <div class="tl-header">
           <div class="tl-header-text">
             <div class="tl-time">14:00</div>
-            <div class="tl-title">👋 解散 — また会いましょう</div>
-            <div class="tl-brief">新神戸周辺にて。2泊3日、お疲れさまでした。</div>
+            <div class="tl-title">👋 またね</div>
+            <div class="tl-brief">新神戸周辺にて。</div>
           </div>
         </div>
       </div>
@@ -836,9 +814,7 @@
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     MAP
-════════════════════════════════ -->
+<!-- ════════════ MAP ════════════ -->
 <div id="tab-map" class="tab-content">
   <div class="container">
     <div style="padding-top: 24px;">
@@ -849,14 +825,11 @@
         <div class="map-legend-item"><div class="map-legend-dot" style="background:#e07b5a"></div>宿・ホテル</div>
         <div class="map-legend-item"><div class="map-legend-dot" style="background:#c9a84c"></div>グルメ</div>
       </div>
-      <div class="notice tip" style="margin-top: 16px;">📍 ピンをタップするとスポット名と住所が表示されます</div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     WEATHER
-════════════════════════════════ -->
+<!-- ════════════ WEATHER ════════════ -->
 <div id="tab-weather" class="tab-content">
   <div class="container">
     <div style="padding-top: 24px;">
@@ -871,7 +844,7 @@
       <div class="weather-row">
         <div class="w-date">5/20（水）Day 2</div>
         <div class="w-icon">🌧</div>
-        <div class="w-desc">曇時々雨 — 傘必携</div>
+        <div class="w-desc">曇時々雨 — 傘があると安心</div>
         <div class="w-temp">21℃</div>
         <div class="w-rain danger">60% ☔</div>
       </div>
@@ -894,7 +867,6 @@
 
 <!-- ════════════ SCRIPTS ════════════ -->
 <script>
-  // ── タブ切り替え ──
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const tab = btn.dataset.tab;
@@ -902,13 +874,11 @@
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById('tab-' + tab).classList.add('active');
-      // マップタブを開いた時にサイズ修正
       if (tab === 'map') { setTimeout(() => map.invalidateSize(), 100); }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 
-  // ── タイムラインアイテム 展開 ──
   function toggleItem(el) {
     if (el.classList.contains('no-expand')) return;
     const detail = el.querySelector('.tl-detail');
@@ -918,7 +888,6 @@
     detail.style.maxHeight = isOpen ? '0' : detail.scrollHeight + 'px';
   }
 
-  // ── Day2 プラン選択 ──
   function selectPlan(id) {
     document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('active'));
     document.querySelectorAll('.plan-timeline').forEach(t => t.classList.remove('active'));
@@ -926,7 +895,6 @@
     document.getElementById('plan-' + id).classList.add('active');
   }
 
-  // ── Leaflet マップ ──
   const map = L.map('map', { zoomControl: true, scrollWheelZoom: false }).setView([34.57, 135.05], 10);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors', maxZoom: 18
