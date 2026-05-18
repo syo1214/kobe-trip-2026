@@ -22,96 +22,189 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Noto Sans JP', sans-serif; background: var(--light); color: var(--navy); line-height: 1.8; }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
       background: linear-gradient(160deg, var(--navy) 0%, var(--sea) 60%, var(--sky) 100%);
-      color: white; padding: 60px 24px 90px; text-align: center; position: relative; overflow: hidden;
+      color: white; padding: 56px 24px 80px; text-align: center; position: relative; overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 60px;
       background: var(--light); clip-path: ellipse(55% 100% at 50% 100%);
     }
     .hero-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; opacity: 0.7; margin-bottom: 16px; }
-    .hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(28px, 6vw, 48px); font-weight: 300; letter-spacing: 6px; margin-bottom: 10px; }
-    .hero-tagline { font-size: 13px; letter-spacing: 2px; opacity: 0.75; margin-bottom: 20px; font-weight: 300; }
-    .hero-dates { font-size: 14px; letter-spacing: 3px; opacity: 0.85; margin-bottom: 28px; }
-    .hero-badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-    .badge { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; padding: 5px 16px; font-size: 12px; letter-spacing: 1px; }
+    .hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(26px, 6vw, 46px); font-weight: 300; letter-spacing: 6px; margin-bottom: 8px; }
+    .hero-tagline { font-size: 13px; letter-spacing: 2px; opacity: 0.72; margin-bottom: 18px; font-weight: 300; }
+    .hero-dates { font-size: 14px; letter-spacing: 3px; opacity: 0.85; margin-bottom: 24px; }
+    .hero-badges { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .badge { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; padding: 5px 14px; font-size: 12px; letter-spacing: 1px; }
 
-    /* CONTAINER */
-    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
-
-    /* HIGHLIGHTS */
-    .highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 36px 0 32px; }
+    /* ── HIGHLIGHTS ── */
+    .highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 28px 0 0; }
     .hl-card {
-      border-radius: 16px; padding: 22px 18px; color: white; position: relative; overflow: hidden;
-      min-height: 110px; display: flex; flex-direction: column; justify-content: space-between;
+      border-radius: 16px; padding: 20px 16px; color: white; position: relative; overflow: hidden;
+      min-height: 100px; display: flex; flex-direction: column; justify-content: space-between;
     }
     .hl-card::after {
       content: ''; position: absolute; top: -20px; right: -20px;
-      width: 90px; height: 90px; border-radius: 50%;
-      background: rgba(255,255,255,0.08);
+      width: 80px; height: 80px; border-radius: 50%; background: rgba(255,255,255,0.08);
     }
-    .hl-emoji { font-size: 30px; margin-bottom: 8px; line-height: 1; }
-    .hl-title { font-size: 14px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px; }
-    .hl-sub { font-size: 11px; opacity: 0.75; letter-spacing: 0.5px; }
+    .hl-emoji { font-size: 28px; margin-bottom: 6px; line-height: 1; }
+    .hl-title { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 3px; }
+    .hl-sub { font-size: 11px; opacity: 0.72; }
 
-    /* SECTION TITLE */
-    .section-title { display: flex; align-items: center; gap: 12px; margin: 44px 0 20px; }
-    .section-title .icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-    .section-title h2 { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 400; letter-spacing: 2px; }
-    .section-title .line { flex: 1; height: 1px; background: linear-gradient(to right, var(--navy), transparent); opacity: 0.2; }
+    /* ── TAB BAR ── */
+    .tab-bar-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: white; border-bottom: 1px solid #e8e8e8;
+      box-shadow: 0 2px 10px rgba(26,39,68,0.08);
+    }
+    .tab-bar {
+      display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+      max-width: 780px; margin: 0 auto; padding: 0 12px;
+      scrollbar-width: none;
+    }
+    .tab-bar::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      flex-shrink: 0; padding: 14px 18px; font-size: 13px; font-weight: 500;
+      border: none; background: none; color: #aaa; cursor: pointer;
+      border-bottom: 2.5px solid transparent; transition: all 0.2s;
+      font-family: 'Noto Sans JP', sans-serif; letter-spacing: 0.5px;
+    }
+    .tab-btn.active { color: var(--sea); border-bottom-color: var(--sea); }
+    .tab-btn:hover { color: var(--navy); }
 
-    /* HOTEL */
-    .hotel-card { color: white; border-radius: 16px; padding: 28px 24px; margin-bottom: 12px; }
-    .hotel-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.65; margin-bottom: 10px; }
-    .hotel-name { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 400; margin-bottom: 6px; letter-spacing: 1px; }
-    .hotel-copy { font-size: 13px; opacity: 0.85; line-height: 1.8; margin-bottom: 16px; }
-    .hotel-address { font-size: 11px; opacity: 0.55; margin-bottom: 14px; }
-    .hotel-details { display: flex; gap: 8px; flex-wrap: wrap; }
-    .hotel-detail-item { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 4px 12px; font-size: 12px; }
+    /* ── TAB CONTENT ── */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px 48px; }
 
-    /* DAY HEADER */
-    .day-header { display: flex; align-items: baseline; gap: 10px; margin: 36px 0 16px; }
-    .day-num { font-family: 'Noto Serif JP', serif; font-size: 36px; font-weight: 300; color: var(--sea); line-height: 1; }
+    /* ── SECTION TITLE ── */
+    .section-title { display: flex; align-items: center; gap: 10px; margin: 32px 0 16px; }
+    .section-title .icon { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+    .section-title h2 { font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 400; letter-spacing: 2px; }
+    .section-title .line { flex: 1; height: 1px; background: linear-gradient(to right, var(--navy), transparent); opacity: 0.15; }
+
+    /* ── DAY HEADER ── */
+    .day-header { display: flex; align-items: center; gap: 12px; padding: 24px 0 16px; }
+    .day-num { font-family: 'Noto Serif JP', serif; font-size: 40px; font-weight: 300; color: var(--sea); line-height: 1; }
     .day-info { flex: 1; }
-    .day-date { font-size: 13px; color: #888; letter-spacing: 1px; }
+    .day-date { font-size: 12px; color: #888; letter-spacing: 1px; }
     .day-title { font-size: 16px; font-weight: 500; letter-spacing: 1px; }
-    .day-weather { text-align: right; font-size: 13px; }
+    .day-weather { text-align: right; }
     .day-weather .temp { font-weight: 700; font-size: 15px; }
     .day-weather .rain { color: #888; font-size: 11px; }
 
-    /* TIMELINE */
+    /* ── TIMELINE ── */
     .timeline { position: relative; padding-left: 28px; }
-    .timeline::before { content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--sea), var(--sky), transparent); border-radius: 2px; }
-    .tl-item { position: relative; margin-bottom: 14px; background: white; border-radius: 12px; padding: 14px 16px; box-shadow: 0 1px 8px rgba(26,39,68,0.06); }
-    .tl-item::before { content: ''; position: absolute; left: -24px; top: 18px; width: 10px; height: 10px; border-radius: 50%; background: var(--sea); border: 2px solid white; box-shadow: 0 0 0 2px var(--sea); }
+    .timeline::before {
+      content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px;
+      width: 2px; background: linear-gradient(to bottom, var(--sea), var(--sky), transparent); border-radius: 2px;
+    }
+
+    /* expandable timeline item */
+    .tl-item {
+      position: relative; margin-bottom: 12px; background: white;
+      border-radius: 14px; box-shadow: 0 1px 8px rgba(26,39,68,0.06);
+      overflow: hidden; cursor: pointer; transition: box-shadow 0.2s;
+    }
+    .tl-item:hover { box-shadow: 0 3px 16px rgba(26,39,68,0.12); }
+    .tl-item::before {
+      content: ''; position: absolute; left: -24px; top: 20px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--sea); border: 2px solid white; box-shadow: 0 0 0 2px var(--sea);
+    }
+    .tl-item.gold::before { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+    .tl-item.gold { border-left: 3px solid var(--gold); }
     .tl-item.free::before { background: var(--coral); box-shadow: 0 0 0 2px var(--coral); }
-    .tl-item.highlight-item { border-left: 3px solid var(--gold); }
-    .tl-item.highlight-item::before { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+    .tl-item.no-expand { cursor: default; }
+
+    .tl-header { padding: 14px 16px; display: flex; align-items: flex-start; gap: 10px; }
+    .tl-header-text { flex: 1; }
     .tl-time { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--sea); margin-bottom: 3px; }
-    .tl-title { font-size: 15px; font-weight: 500; margin-bottom: 3px; }
-    .tl-desc { font-size: 12px; color: #777; line-height: 1.7; }
-    .tl-address { font-size: 11px; color: #aaa; margin-top: 5px; display: flex; align-items: center; gap: 4px; }
-    .tl-tags { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
-    .tl-tag { display: inline-block; background: var(--sand); border-radius: 6px; padding: 1px 8px; font-size: 10px; color: var(--coral); font-weight: 500; }
+    .tl-title { font-size: 15px; font-weight: 500; }
+    .tl-brief { font-size: 12px; color: #999; margin-top: 2px; }
+    .expand-icon {
+      font-size: 18px; color: #ccc; font-weight: 300; flex-shrink: 0;
+      margin-top: 2px; transition: transform 0.25s; line-height: 1;
+    }
+    .tl-item.open .expand-icon { transform: rotate(45deg); color: var(--sea); }
+
+    .tl-detail {
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+    }
+    .tl-detail-inner {
+      padding: 0 16px 16px; border-top: 1px solid #f5f5f5;
+    }
+    .tl-desc { font-size: 13px; color: #555; line-height: 1.8; margin-bottom: 10px; padding-top: 12px; }
+    .tl-tips { display: flex; flex-direction: column; gap: 6px; }
+    .tl-tip { display: flex; gap: 8px; font-size: 12px; color: #666; }
+    .tl-tip-icon { font-size: 14px; flex-shrink: 0; line-height: 1.6; }
+    .tl-address { font-size: 11px; color: #bbb; margin-top: 10px; display: flex; align-items: center; gap: 4px; }
+    .tl-tags { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+    .tl-tag { background: var(--sand); border-radius: 6px; padding: 2px 8px; font-size: 10px; color: var(--coral); font-weight: 500; }
     .tl-tag.food { background: #fff0e8; color: #c05a2a; }
     .tl-tag.stay { background: #e8f0ff; color: #2a5ac0; }
 
-    /* FREE TIME CARD */
-    .free-card {
-      background: linear-gradient(135deg, #fff8f0, #fff);
-      border: 1.5px solid #f0d4b0;
-      border-radius: 16px; padding: 20px; margin-bottom: 16px;
+    /* station card */
+    .station-card {
+      background: linear-gradient(135deg, var(--navy), #2d4a8a);
+      color: white; border-radius: 16px; padding: 20px; margin-bottom: 16px;
     }
-    .free-card-title { font-size: 14px; font-weight: 600; color: var(--coral); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-    .free-option { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f5ece0; }
-    .free-option:last-child { border-bottom: none; padding-bottom: 0; }
-    .free-option-emoji { font-size: 22px; flex-shrink: 0; line-height: 1.4; }
-    .free-option-name { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
-    .free-option-desc { font-size: 12px; color: #888; }
+    .station-card .label { font-size: 10px; letter-spacing: 3px; opacity: 0.6; margin-bottom: 8px; text-transform: uppercase; }
+    .station-card .title { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+    .station-steps { display: flex; flex-direction: column; gap: 8px; }
+    .station-step { display: flex; gap: 10px; align-items: flex-start; }
+    .step-num { background: rgba(255,255,255,0.2); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .step-text { font-size: 13px; opacity: 0.9; line-height: 1.6; }
+    .station-note { background: rgba(255,255,255,0.12); border-radius: 10px; padding: 10px 14px; margin-top: 14px; font-size: 13px; }
 
-    /* WEATHER */
+    /* hotel card */
+    .hotel-card { color: white; border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+    .hotel-eyebrow { font-size: 10px; letter-spacing: 3px; opacity: 0.6; margin-bottom: 8px; text-transform: uppercase; }
+    .hotel-name { font-family: 'Noto Serif JP', serif; font-size: 18px; margin-bottom: 6px; letter-spacing: 1px; }
+    .hotel-copy { font-size: 13px; opacity: 0.85; line-height: 1.8; margin-bottom: 14px; }
+    .hotel-details { display: flex; gap: 8px; flex-wrap: wrap; }
+    .hotel-detail-item { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 4px 12px; font-size: 12px; }
+
+    /* ── DAY2 PLAN SELECTOR ── */
+    .plan-intro { font-size: 13px; color: #777; margin: 4px 0 16px; }
+    .plan-cards { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .plan-card {
+      border: 2px solid #e8e8e8; border-radius: 14px; padding: 16px;
+      cursor: pointer; transition: all 0.2s; background: white;
+    }
+    .plan-card.active {
+      border-color: var(--sea); background: #f0f7ff;
+      box-shadow: 0 2px 12px rgba(46,111,163,0.15);
+    }
+    .plan-card-header { display: flex; align-items: center; gap: 12px; }
+    .plan-badge {
+      background: #e8e8e8; color: #888; font-size: 11px; font-weight: 700;
+      letter-spacing: 1px; padding: 3px 10px; border-radius: 20px; flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .plan-card.active .plan-badge { background: var(--sea); color: white; }
+    .plan-card-title { font-size: 14px; font-weight: 700; flex: 1; }
+    .plan-card-sub { font-size: 12px; color: #999; margin-top: 4px; margin-left: 42px; }
+    .plan-card.active .plan-card-sub { color: #5a8ab0; }
+    .plan-check { font-size: 18px; color: #ccc; transition: all 0.2s; }
+    .plan-card.active .plan-check { color: var(--sea); }
+
+    .plan-timeline { display: none; }
+    .plan-timeline.active { display: block; }
+
+    /* ── NOTICE ── */
+    .notice { border-radius: 0 10px 10px 0; padding: 12px 16px; font-size: 13px; margin: 14px 0; }
+    .notice.rain { background: #eef4ff; border-left: 3px solid var(--sea); color: #1a3a6a; }
+    .notice.tip { background: #fff8e6; border-left: 3px solid var(--gold); color: #7a5a00; }
+
+    /* ── MAP ── */
+    #map { height: 440px; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 16px rgba(26,39,68,0.12); margin-bottom: 8px; }
+    .map-legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 10px 4px; font-size: 12px; color: #666; }
+    .map-legend-item { display: flex; align-items: center; gap: 5px; }
+    .map-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ── WEATHER ── */
     .weather-row { display: flex; align-items: center; background: white; border-radius: 12px; padding: 14px 18px; margin-bottom: 8px; box-shadow: 0 1px 8px rgba(26,39,68,0.06); gap: 12px; }
     .w-date { font-size: 12px; color: #888; min-width: 80px; }
     .w-icon { font-size: 22px; }
@@ -119,33 +212,18 @@
     .w-temp { font-weight: 700; font-size: 15px; color: var(--coral); }
     .w-rain { font-size: 11px; color: #888; text-align: right; min-width: 40px; }
     .w-rain.danger { color: var(--coral); font-weight: 700; }
+    .weather-note { font-size: 12px; color: #aaa; margin: 12px 0 8px; padding: 0 4px; }
 
-    /* NOTICE */
-    .notice { border-radius: 0 10px 10px 0; padding: 12px 16px; font-size: 13px; margin: 14px 0; }
-    .notice.rain { background: #eef4ff; border-left: 3px solid var(--sea); color: #1a3a6a; }
+    .divider { height: 1px; background: linear-gradient(to right, transparent, var(--sky), transparent); margin: 24px 0; }
 
-    /* MAP */
-    #map { height: 440px; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 16px rgba(26,39,68,0.12); margin-bottom: 8px; }
-    .map-legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 10px 4px; font-size: 12px; color: #666; }
-    .map-legend-item { display: flex; align-items: center; gap: 5px; }
-    .map-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-
-    /* FOOD GRID */
-    .food-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .food-item { background: white; border-radius: 12px; padding: 14px; box-shadow: 0 1px 8px rgba(26,39,68,0.06); }
-    .food-emoji { font-size: 26px; margin-bottom: 8px; }
-    .food-name { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
-    .food-copy { font-size: 11px; color: #999; line-height: 1.6; margin-bottom: 4px; }
-    .food-when { font-size: 11px; color: var(--sea); font-weight: 500; }
-
-    .divider { height: 1px; background: linear-gradient(to right, transparent, var(--sky), transparent); margin: 32px 0; }
-    .footer { text-align: center; padding: 48px 24px 60px; color: #bbb; font-size: 12px; letter-spacing: 2px; line-height: 2.2; }
-    .footer-heart { color: var(--coral); font-size: 16px; display: block; margin-bottom: 8px; }
+    /* ── FOOTER ── */
+    .footer { text-align: center; padding: 40px 24px 60px; color: #ccc; font-size: 12px; letter-spacing: 2px; line-height: 2.4; background: white; }
+    .footer-heart { display: block; font-size: 20px; color: var(--coral); margin-bottom: 8px; }
   </style>
 </head>
 <body>
 
-<!-- HERO -->
+<!-- ── HERO ── -->
 <div class="hero">
   <div class="hero-label">Travel Itinerary</div>
   <h1>神戸・淡路島の旅</h1>
@@ -158,10 +236,9 @@
   </div>
 </div>
 
-<div class="container">
-
-  <!-- ハイライト -->
-  <div class="highlights">
+<!-- ── HIGHLIGHTS（タブ外・常時表示）── -->
+<div class="container" style="padding-top: 0;">
+  <div class="highlights" style="margin-top: 28px;">
     <div class="hl-card" style="background: linear-gradient(135deg, #1a5c7a, #2e9fc7)">
       <div class="hl-emoji">🦐</div>
       <div class="hl-title">淡路島 海鮮丼</div>
@@ -183,266 +260,674 @@
       <div class="hl-sub">Day 1 · 夕暮れのテラスで</div>
     </div>
   </div>
-
-  <!-- 宿泊 -->
-  <div class="section-title">
-    <div class="icon" style="background:#eef7f0">🏨</div>
-    <h2>宿泊</h2>
-    <div class="line"></div>
-  </div>
-
-  <div class="hotel-card" style="background: linear-gradient(135deg, #2d5a3d, var(--green));">
-    <div class="hotel-eyebrow">5月19日〜21日 ｜ 2泊 ｜ 淡路島</div>
-    <div class="hotel-name">岩屋温泉 絵島別庭 海と森</div>
-    <div class="hotel-copy">目の前に海、背後に深い緑。淡路島の最北端に佇む温泉旅館。<br>夕食は季節の懐石、朝は波の音と共に目覚める2泊。</div>
-    <div class="hotel-address">📍 〒656-2401 兵庫県淡路市岩屋922-1</div>
-    <div class="hotel-details">
-      <span class="hotel-detail-item">♨️ 温泉</span>
-      <span class="hotel-detail-item">🍽 夕食・朝食付き</span>
-      <span class="hotel-detail-item">15:00 チェックイン</span>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- ===== DAY 1 ===== -->
-  <div class="day-header">
-    <div class="day-num">1</div>
-    <div class="day-info">
-      <div class="day-date">5月19日（火）</div>
-      <div class="day-title">神戸 → 淡路島へ</div>
-    </div>
-    <div class="day-weather">
-      <div class="temp">☀️ 28℃</div>
-      <div class="rain">降水 20%</div>
-    </div>
-  </div>
-
-  <div class="timeline">
-    <div class="tl-item highlight-item">
-      <div class="tl-time">11:00</div>
-      <div class="tl-title">🦐 道の駅あわじ／えびす丸</div>
-      <div class="tl-desc">淡路島上陸1発目は獲れたて海鮮丼。空腹で臨む、それが正解。</div>
-      <div class="tl-address">📍 〒656-1521 兵庫県淡路市岩屋925-1</div>
-      <div class="tl-tags"><span class="tl-tag food">食事</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-time">13:00</div>
-      <div class="tl-title">🌿 夢舞台</div>
-      <div class="tl-desc">安藤忠雄が設計した白亜のガーデン。段状の花壇と海風が、ここが日本であることを忘れさせる。</div>
-      <div class="tl-address">📍 〒656-2306 兵庫県淡路市夢舞台2番地</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-time">14:30</div>
-      <div class="tl-title">🥐 アクアイグニス淡路</div>
-      <div class="tl-desc">翌朝の朝食用パンをここでゲット。焼きたての香りだけで癒される。</div>
-      <div class="tl-address">📍 〒656-2307 兵庫県淡路市楠本2425-2</div>
-    </div>
-    <div class="tl-item highlight-item">
-      <div class="tl-time">15:00</div>
-      <div class="tl-title">🏨 チェックイン</div>
-      <div class="tl-desc">今夜から2泊、海を独占する宿へ。まずは温泉で旅の疲れを流そう。</div>
-      <div class="tl-address">📍 岩屋温泉 絵島別庭 海と森</div>
-      <div class="tl-tags"><span class="tl-tag stay">2泊</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-time">15:30</div>
-      <div class="tl-title">⛩ 本福寺 水御堂</div>
-      <div class="tl-desc">地下に眠る圧巻の空間。蓮の花が浮かぶ池を割って、地下へ降りていく安藤建築。</div>
-      <div class="tl-address">📍 〒656-1521 兵庫県淡路市浦1309</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-time">17:00</div>
-      <div class="tl-title">🌸 花さじき</div>
-      <div class="tl-desc">100万本の花が咲く高台から、淡路島の絶景を一望。</div>
-      <div class="tl-address">📍 〒656-1724 兵庫県淡路市楠本2805-7</div>
-    </div>
-    <div class="tl-item highlight-item">
-      <div class="tl-time">18:00</div>
-      <div class="tl-title">🥞 幸せのパンケーキ 淡路島テラス</div>
-      <div class="tl-desc">ふるふる・しゅわしゅわ。夕暮れの淡路島で、ひといき。</div>
-      <div class="tl-address">📍 〒656-1501 兵庫県淡路市尾崎42-1</div>
-      <div class="tl-tags"><span class="tl-tag food">スイーツ</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-time">夜</div>
-      <div class="tl-title">🍽 宿 夕食 ＋ 温泉</div>
-      <div class="tl-desc">懐石料理と、夜の温泉。明日への英気を養う。</div>
-    </div>
-  </div>
-
-  <!-- ===== DAY 2 ===== -->
-  <div class="day-header">
-    <div class="day-num">2</div>
-    <div class="day-info">
-      <div class="day-date">5月20日（水）</div>
-      <div class="day-title">淡路島満喫</div>
-    </div>
-    <div class="day-weather">
-      <div class="temp">🌧 26℃</div>
-      <div class="rain" style="color:var(--coral);font-weight:700">降水 60%</div>
-    </div>
-  </div>
-
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-time">朝</div>
-      <div class="tl-title">🥐 朝食 — アクアイグニスのパン</div>
-      <div class="tl-desc">昨日買ったパンで贅沢な朝を。</div>
-    </div>
-    <div class="tl-item highlight-item">
-      <div class="tl-time">10:00〜</div>
-      <div class="tl-title">🐉 ドラゴンクエストアイランド</div>
-      <div class="tl-desc">スマホをコントローラーに、本物の森の中でドラクエが始まる。城下町 → 北の森 → 神殿 → 魔王城を実際に歩き、モンスターを倒しながら魔王討伐を目指すフィールドRPG体験。メインクエスト約2.5時間〜最大4時間。<br><br>
-      <strong>🆕 2026年4月〜リメイク版「いにしえの魔神と導かれし冒険者たち」公開中</strong>（シリーズ40周年×アイランド5周年）。DQ I&IIコラボ「よみがえるロトの記憶ラリー」も同時開催。<br><br>
-      <strong>🍺 場内レストラン「ルイーダの酒場」</strong>：玉ねぎキーマカレー、ホロミット4世のランチボックス¥2,100。入場チケット不要で利用OK。</div>
-      <div class="tl-address">📍 〒656-2307 兵庫県淡路市楠本2425-2（ニジゲンノモリ）</div>
-      <div class="tl-tags"><span class="tl-tag">🗡 約2.5〜4h</span><span class="tl-tag">🍺 ルイーダの酒場あり</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-time">昼</div>
-      <div class="tl-title">🍔 シマウマバーガー <span style="font-size:12px;color:#999;font-weight:normal">（車で約15分）</span></div>
-      <div class="tl-desc">淡路島産玉ねぎを低温でじっくり揚げたオニオンフライが主役。甘み・コク・サクサクの三重奏。海風を感じる開放的な芝生テラス席で。<br>
-      <strong>おすすめ：</strong>ザ淡路牛プレミアムバーガー／2種のあぶりチーズバーガー</div>
-      <div class="tl-address">📍 〒656-1602 兵庫県淡路市育波459</div>
-      <div class="tl-tags"><span class="tl-tag food">食事</span><span class="tl-tag">🧅 淡路玉ねぎ</span><span class="tl-tag">🌿 テラス席</span></div>
-    </div>
-    <div class="tl-item free">
-      <div class="tl-time">午後</div>
-      <div class="tl-title">✨ フレキシブルタイム</div>
-      <div class="tl-desc">道の駅うずしお（鳴門の渦潮ビュー）/ ONOKORO / 宿で早め温泉 — その日の気分で</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-time">夜</div>
-      <div class="tl-title">🍽 宿 夕食 ＋ 温泉</div>
-      <div class="tl-desc">最後の夜を温泉でゆっくり。</div>
-    </div>
-  </div>
-
-  <!-- ===== DAY 3 ===== -->
-  <div class="day-header">
-    <div class="day-num" style="color:var(--coral)">3</div>
-    <div class="day-info">
-      <div class="day-date">5月21日（木）</div>
-      <div class="day-title">帰宅日 ☔</div>
-    </div>
-    <div class="day-weather">
-      <div class="temp" style="color:var(--coral)">🌧 24℃</div>
-      <div class="rain danger" style="color:var(--coral); font-weight:700;">降水 90%</div>
-    </div>
-  </div>
-
-  <div class="notice rain">☔ 終日雨予報。傘を忘れずに</div>
-
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-time">午前</div>
-      <div class="tl-title">🏨 チェックアウト → 神戸方面へ</div>
-      <div class="tl-desc">最後の朝ごはんをゆっくり楽しんでから出発。</div>
-    </div>
-    <div class="tl-item highlight-item">
-      <div class="tl-time">14:00</div>
-      <div class="tl-title">👋 解散 — また会いましょう</div>
-      <div class="tl-desc">新神戸周辺にて。2泊3日、お疲れさまでした。</div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- マップ -->
-  <div class="section-title">
-    <div class="icon" style="background:#eef4ff">🗺</div>
-    <h2>旅程マップ</h2>
-    <div class="line"></div>
-  </div>
-
-  <div id="map"></div>
-  <div class="map-legend">
-    <div class="map-legend-item"><div class="map-legend-dot" style="background:#2e6fa3"></div>Day1（神戸〜淡路北部）</div>
-    <div class="map-legend-item"><div class="map-legend-dot" style="background:#5a8a6a"></div>Day2（淡路中南部）</div>
-    <div class="map-legend-item"><div class="map-legend-dot" style="background:#e07b5a"></div>宿・ホテル</div>
-    <div class="map-legend-item"><div class="map-legend-dot" style="background:#c9a84c"></div>グルメ</div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- 天気 -->
-  <div class="section-title">
-    <div class="icon" style="background:#eef4ff">🌤</div>
-    <h2>天気予報</h2>
-    <div class="line"></div>
-  </div>
-
-  <div style="font-size:11px;color:#aaa;margin-bottom:8px;padding:0 4px">※ウェザーニュース基準（5/16更新）</div>
-  <div class="weather-row">
-    <div class="w-date">5/19（火）</div>
-    <div class="w-icon">☀️</div>
-    <div class="w-desc">晴時々曇 — 暑くなりそう</div>
-    <div class="w-temp">28℃</div>
-    <div class="w-rain">20%</div>
-  </div>
-  <div class="weather-row">
-    <div class="w-date">5/20（水）</div>
-    <div class="w-icon">🌧</div>
-    <div class="w-desc">曇時々雨 — 傘あると安心</div>
-    <div class="w-temp">26℃</div>
-    <div class="w-rain danger">60% ☔</div>
-  </div>
-  <div class="weather-row">
-    <div class="w-date">5/21（木）</div>
-    <div class="w-icon">🌧</div>
-    <div class="w-desc">雨 — 傘必須</div>
-    <div class="w-temp">23℃</div>
-    <div class="w-rain danger">90% ☔</div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- グルメ -->
-  <div class="section-title">
-    <div class="icon" style="background:#fff8ee">🍽</div>
-    <h2>グルメ計画</h2>
-    <div class="line"></div>
-  </div>
-
-  <div class="food-grid">
-    <div class="food-item">
-      <div class="food-emoji">🦐</div>
-      <div class="food-name">道の駅あわじ 海鮮丼</div>
-      <div class="food-copy">獲れたて、正真正銘の淡路島グルメ</div>
-      <div class="food-when">Day 1 · 11:00（空腹で！）</div>
-    </div>
-    <div class="food-item">
-      <div class="food-emoji">🥞</div>
-      <div class="food-name">幸せのパンケーキ</div>
-      <div class="food-copy">淡路島テラスで、ふるふるの奇跡</div>
-      <div class="food-when">Day 1 · 18:00</div>
-    </div>
-    <div class="food-item">
-      <div class="food-emoji">🍞</div>
-      <div class="food-name">アクアイグニスのパン</div>
-      <div class="food-copy">前日購入、翌朝の贅沢な朝食</div>
-      <div class="food-when">Day 2 · 朝食</div>
-    </div>
-    <div class="food-item">
-      <div class="food-emoji">🍔</div>
-      <div class="food-name">シマウマバーガー</div>
-      <div class="food-copy">淡路玉ねぎの甘み全開、海テラスで</div>
-      <div class="food-when">Day 2 · 昼</div>
-    </div>
-  </div>
-
 </div>
 
+<!-- ── TAB BAR ── -->
+<div class="tab-bar-wrap">
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="day1">📍 Day 1</button>
+    <button class="tab-btn" data-tab="day2">🐉 Day 2</button>
+    <button class="tab-btn" data-tab="day3">👋 Day 3</button>
+    <button class="tab-btn" data-tab="map">🗺 マップ</button>
+    <button class="tab-btn" data-tab="weather">🌤 天気</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     DAY 1
+════════════════════════════════ -->
+<div id="tab-day1" class="tab-content active">
+  <div class="container">
+
+    <div class="day-header">
+      <div class="day-num">1</div>
+      <div class="day-info">
+        <div class="day-date">5月19日（火）</div>
+        <div class="day-title">神戸 → 淡路島へ</div>
+      </div>
+      <div class="day-weather">
+        <div class="temp">☀️ 28℃</div>
+        <div class="rain">降水 20%</div>
+      </div>
+    </div>
+
+    <!-- 新神戸駅 案内 -->
+    <div class="station-card">
+      <div class="label">Departure · 10:00</div>
+      <div class="title">🚄 新神戸駅 集合</div>
+      <div class="station-steps">
+        <div class="station-step">
+          <div class="step-num">1</div>
+          <div class="step-text">新幹線を降りたら、改札を出る</div>
+        </div>
+        <div class="station-step">
+          <div class="step-num">2</div>
+          <div class="step-text">そのまま外（<strong>2Fロータリー出口</strong>）へ。扉を出てすぐのロータリーで待っていて</div>
+        </div>
+        <div class="station-step">
+          <div class="step-num">3</div>
+          <div class="step-text">着いたら <strong>LINEください</strong> 🚗 すぐ迎えに行きます</div>
+        </div>
+      </div>
+      <div class="station-note">📍 JR新神戸駅 2F ロータリー（北口）</div>
+    </div>
+
+    <!-- 宿泊カード -->
+    <div class="hotel-card" style="background: linear-gradient(135deg, #2d5a3d, var(--green));">
+      <div class="hotel-eyebrow">5月19日〜21日 ｜ 2泊</div>
+      <div class="hotel-name">岩屋温泉 絵島別庭 海と森</div>
+      <div class="hotel-copy">目の前に海、背後に深い緑。淡路島の最北端に佇む温泉旅館。夕食は懐石、朝は波の音で目覚める2泊。</div>
+      <div class="hotel-details">
+        <span class="hotel-detail-item">♨️ 温泉</span>
+        <span class="hotel-detail-item">🍽 夕食・朝食付き</span>
+        <span class="hotel-detail-item">15:00 チェックイン</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- TIMELINE -->
+    <div class="timeline">
+
+      <!-- 道の駅あわじ -->
+      <div class="tl-item gold" onclick="toggleItem(this)">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">11:00</div>
+            <div class="tl-title">🦐 道の駅あわじ／えびす丸</div>
+            <div class="tl-brief">淡路島上陸1発目。獲れたて海鮮丼</div>
+          </div>
+          <div class="expand-icon">＋</div>
+        </div>
+        <div class="tl-detail">
+          <div class="tl-detail-inner">
+            <div class="tl-desc">明石海峡大橋をバックに食べる海鮮丼が名物。淡路島に渡ってすぐのスポットで、空腹のまま臨むのが正解。橋を眺めながら食べる最初の一口が最高。</div>
+            <div class="tl-tips">
+              <div class="tl-tip"><div class="tl-tip-icon">🍣</div><div>おすすめ：特上海鮮丼 / うにいくら丼 / まぐろ丼</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">📸</div><div>明石海峡大橋×海鮮丼の写真、映えます</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">⏰</div><div>11時台は比較的空いてる。12時以降は混雑注意</div></div>
+            </div>
+            <div class="tl-address">📍 〒656-1521 兵庫県淡路市岩屋925-1</div>
+            <div class="tl-tags"><span class="tl-tag food">食事</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 夢舞台 -->
+      <div class="tl-item" onclick="toggleItem(this)">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">13:00</div>
+            <div class="tl-title">🌿 夢舞台</div>
+            <div class="tl-brief">安藤忠雄設計の白亜のガーデン</div>
+          </div>
+          <div class="expand-icon">＋</div>
+        </div>
+        <div class="tl-detail">
+          <div class="tl-detail-inner">
+            <div class="tl-desc">安藤忠雄が設計した広大な庭園施設。棚田状に花が咲く「百段苑」が圧巻。地中海を思わせる白い建物と海の景色が、ここが日本であることを一瞬忘れさせる。</div>
+            <div class="tl-tips">
+              <div class="tl-tip"><div class="tl-tip-icon">🌺</div><div>5月はバラが見頃。百段苑の花の棚田は必見</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🏨</div><div>ウェスティンホテル淡路に隣接。海を一望するテラスも</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🆓</div><div>屋外エリアは入場無料（一部施設は有料）</div></div>
+            </div>
+            <div class="tl-address">📍 〒656-2306 兵庫県淡路市夢舞台2番地</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- アクアイグニス -->
+      <div class="tl-item" onclick="toggleItem(this)">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">14:30</div>
+            <div class="tl-title">🥐 アクアイグニス淡路</div>
+            <div class="tl-brief">翌朝の朝食パンを仕入れる</div>
+          </div>
+          <div class="expand-icon">＋</div>
+        </div>
+        <div class="tl-detail">
+          <div class="tl-detail-inner">
+            <div class="tl-desc">辻口博啓シェフ監修のパン・スイーツ専門店。明日の朝食用にここでパンを購入しておく。宿で食べる朝ごはんが一気に特別なものになる。</div>
+            <div class="tl-tips">
+              <div class="tl-tip"><div class="tl-tip-icon">🍞</div><div>クロワッサン・デニッシュが特に人気</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🐉</div><div>DQアイランド（ニジゲンノモリ）と同じ敷地内</div></div>
+            </div>
+            <div class="tl-address">📍 〒656-2307 兵庫県淡路市楠本2425-2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- チェックイン -->
+      <div class="tl-item gold" onclick="toggleItem(this)">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">15:00</div>
+            <div class="tl-title">🏨 チェックイン</div>
+            <div class="tl-brief">今夜から2泊、海を独占する宿へ</div>
+          </div>
+          <div class="expand-icon">＋</div>
+        </div>
+        <div class="tl-detail">
+          <div class="tl-detail-inner">
+            <div class="tl-desc">岩屋温泉 絵島別庭 海と森。淡路島の最北端、岩屋エリアに佇む温泉旅館。部屋から明石海峡大橋と海を一望できる。</div>
+            <div class="tl-tips">
+              <div class="tl-tip"><div class="tl-tip-icon">♨️</div><div>天然温泉は源泉かけ流し。チェックイン後すぐ入れる</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🍽</div><div>夕食は旬の食材を使った淡路島懐石</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🌅</div><div>夕方の海と橋の景色がとても綺麗</div></div>
+            </div>
+            <div class="tl-address">📍 〒656-2401 兵庫県淡路市岩屋922-1</div>
+            <div class="tl-tags"><span class="tl-tag stay">2泊</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 本福寺 -->
+      <div class="tl-item" onclick="toggleItem(this)">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">15:30</div>
+            <div class="tl-title">⛩ 本福寺 水御堂</div>
+            <div class="tl-brief">蓮の池を割って地下へ、安藤建築の傑作</div>
+          </div>
+          <div class="expand-icon">＋</div>
+        </div>
+        <div class="tl-detail">
+          <div class="tl-detail-inner">
+            <div class="tl-desc">安藤忠雄設計の唯一無二のお寺。蓮の池の中央を二分して、地下の礼拝堂へ下りていく体験が印象的。地下に入ると朱色に染まる荘厳な空間が広がる。</div>
+            <div class="tl-tips">
+              <div class="tl-tip"><div class="tl-tip-icon">🪷</div><div>5〜6月は蓮の花が池一面に咲く時期</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">📸</div><div>礼拝堂内は撮影NG。目に焼き付けて</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🎫</div><div>拝観料あり（約500円）/ 所要15〜30分</div></div>
+            </div>
+            <div class="tl-address">📍 〒656-1521 兵庫県淡路市浦1309</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 花さじき -->
+      <div class="tl-item" onclick="toggleItem(this)">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">17:00</div>
+            <div class="tl-title">🌸 花さじき</div>
+            <div class="tl-brief">100万本の花が咲く高台。淡路島を一望</div>
+          </div>
+          <div class="expand-icon">＋</div>
+        </div>
+        <div class="tl-detail">
+          <div class="tl-detail-inner">
+            <div class="tl-desc">国営明石海峡公園の一部。淡路島内陸の高台にあり、丘一面に広がる花畑と海の絶景が楽しめる。5月はネモフィラ・ポピーが最盛期。</div>
+            <div class="tl-tips">
+              <div class="tl-tip"><div class="tl-tip-icon">🌺</div><div>5月は花の最盛期。写真スポットとしても最高</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🆓</div><div>入場無料</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🌇</div><div>夕暮れ時の光がとくに美しい時間帯</div></div>
+            </div>
+            <div class="tl-address">📍 〒656-1724 兵庫県淡路市楠本2805-7</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 幸せのパンケーキ -->
+      <div class="tl-item gold" onclick="toggleItem(this)">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">18:00</div>
+            <div class="tl-title">🥞 幸せのパンケーキ 淡路島テラス</div>
+            <div class="tl-brief">ふるふる・しゅわしゅわ。夕暮れの淡路で</div>
+          </div>
+          <div class="expand-icon">＋</div>
+        </div>
+        <div class="tl-detail">
+          <div class="tl-detail-inner">
+            <div class="tl-desc">メレンゲをたっぷり使った「生」パンケーキ。外はカリっ、中はしゅわしゅわとろける唯一無二の食感。テラス席から見る夕日と海の景色が最高の一皿を演出する。</div>
+            <div class="tl-tips">
+              <div class="tl-tip"><div class="tl-tip-icon">🥞</div><div>おすすめ：プレミアムパンケーキ（生クリーム添え）</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">🌅</div><div>テラス席がとれたら海側がおすすめ</div></div>
+              <div class="tl-tip"><div class="tl-tip-icon">⏰</div><div>夕方18時前後は比較的空いている</div></div>
+            </div>
+            <div class="tl-address">📍 〒656-1501 兵庫県淡路市尾崎42-1</div>
+            <div class="tl-tags"><span class="tl-tag food">スイーツ</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 夕食・温泉 -->
+      <div class="tl-item no-expand">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">夜</div>
+            <div class="tl-title">🍽 宿 夕食 ＋ 温泉</div>
+            <div class="tl-brief">懐石料理と夜の温泉。明日への英気を養う</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     DAY 2
+════════════════════════════════ -->
+<div id="tab-day2" class="tab-content">
+  <div class="container">
+
+    <div class="day-header">
+      <div class="day-num">2</div>
+      <div class="day-info">
+        <div class="day-date">5月20日（水）</div>
+        <div class="day-title">淡路島満喫</div>
+      </div>
+      <div class="day-weather">
+        <div class="temp">🌧 26℃</div>
+        <div class="rain" style="color:var(--coral);font-weight:700">降水 60%</div>
+      </div>
+    </div>
+
+    <!-- 朝食 -->
+    <div class="timeline" style="margin-bottom: 20px;">
+      <div class="tl-item no-expand">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">朝</div>
+            <div class="tl-title">🥐 朝食 — アクアイグニスのパン</div>
+            <div class="tl-brief">昨日買ったパンで贅沢な宿の朝</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- プラン選択 -->
+    <div class="section-title">
+      <div class="icon" style="background:#fff8e8">🗂</div>
+      <h2>今日のプランを選んで</h2>
+      <div class="line"></div>
+    </div>
+    <div class="plan-intro">DQアイランドとシマウマバーガー、どっちをどう攻める？</div>
+
+    <div class="plan-cards">
+      <!-- Plan A -->
+      <div class="plan-card active" onclick="selectPlan('a')">
+        <div class="plan-card-header">
+          <div class="plan-badge">プランA</div>
+          <div class="plan-card-title">🐉 DQをとことん楽しむ</div>
+          <div class="plan-check">✓</div>
+        </div>
+        <div class="plan-card-sub">4時間フルコース → ルイーダの酒場でランチ</div>
+      </div>
+      <!-- Plan B -->
+      <div class="plan-card" onclick="selectPlan('b')">
+        <div class="plan-card-header">
+          <div class="plan-badge">プランB</div>
+          <div class="plan-card-title">🍔 DQ堪能 → シマウマで締め</div>
+          <div class="plan-check">✓</div>
+        </div>
+        <div class="plan-card-sub">DQ 2.5h → 移動15分 → 余裕のシマウマバーガー</div>
+      </div>
+      <!-- Plan C -->
+      <div class="plan-card" onclick="selectPlan('c')">
+        <div class="plan-card-header">
+          <div class="plan-badge">プランC</div>
+          <div class="plan-card-title">🚀 シマウマ確実確保</div>
+          <div class="plan-check">✓</div>
+        </div>
+        <div class="plan-card-sub">DQクイック体験 → 開店ダッシュで品切れゼロ</div>
+      </div>
+    </div>
+
+    <!-- Plan A タイムライン -->
+    <div id="plan-a" class="plan-timeline active">
+      <div class="notice tip">🐉 DQをフルで堪能する日。ルイーダの酒場でランチまで完結。品切れ心配なし。</div>
+      <div class="timeline">
+        <div class="tl-item gold" onclick="toggleItem(this)">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">10:00〜14:00</div>
+              <div class="tl-title">🐉 DQアイランド フルコース</div>
+              <div class="tl-brief">メインクエスト＋ロトの記憶ラリーまで攻略</div>
+            </div>
+            <div class="expand-icon">＋</div>
+          </div>
+          <div class="tl-detail">
+            <div class="tl-detail-inner">
+              <div class="tl-desc">城下町 → 北の森 → 神殿 → 魔王城を実際に歩いて冒険するフィールドRPG体験。スマホをコントローラーにモンスターを倒し、謎を解きながら魔王討伐を目指す。<br><br><strong>🆕 2026年4月〜 リメイク版「いにしえの魔神と導かれし冒険者たち」公開中</strong>（40周年×5周年）。DQ I&IIコラボ「よみがえるロトの記憶ラリー」も同時開催。</div>
+              <div class="tl-tips">
+                <div class="tl-tip"><div class="tl-tip-icon">⏱</div><div>メインクエストだけで約2.5時間。ラリーも入れると4時間</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">☔</div><div>屋外コースだが、雨天でも実施（スマホとレインウェアがあれば快適）</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">📱</div><div>スマホをフル充電してから入場すること</div></div>
+              </div>
+              <div class="tl-address">📍 〒656-2307 兵庫県淡路市楠本2425-2（ニジゲンノモリ）</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item gold" onclick="toggleItem(this)">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">14:00 頃</div>
+              <div class="tl-title">🍺 ルイーダの酒場でランチ</div>
+              <div class="tl-brief">場内レストラン。DQモチーフメニューで締め</div>
+            </div>
+            <div class="expand-icon">＋</div>
+          </div>
+          <div class="tl-detail">
+            <div class="tl-detail-inner">
+              <div class="tl-desc">DQアイランド場内のレストラン。入場チケット不要で利用可能。ドラクエのキャラクター・メニューが充実しており、冒険の余韻を味わいながら食べられる。</div>
+              <div class="tl-tips">
+                <div class="tl-tip"><div class="tl-tip-icon">🍛</div><div>玉ねぎキーマカレー / ホロミット4世のランチボックス¥2,100</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🍭</div><div>天空風わたあめドリンクも人気</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">👍</div><div>入場チケットなしで入れるのでシマウマ気分じゃない日もここで完結できる</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item free">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">15:00〜</div>
+              <div class="tl-title">✨ 午後フレキシブルタイム</div>
+              <div class="tl-brief">道の駅うずしお / ONOKORO / 宿で早め温泉</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plan B タイムライン -->
+    <div id="plan-b" class="plan-timeline">
+      <div class="notice tip">🍔 DQをしっかり楽しんだ後、余裕のタイミングでシマウマへ。品切れリスクも低い。</div>
+      <div class="timeline">
+        <div class="tl-item gold" onclick="toggleItem(this)">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">10:00〜12:30</div>
+              <div class="tl-title">🐉 DQアイランド（2.5h）</div>
+              <div class="tl-brief">メインクエストをクリアして退場</div>
+            </div>
+            <div class="expand-icon">＋</div>
+          </div>
+          <div class="tl-detail">
+            <div class="tl-detail-inner">
+              <div class="tl-desc">メインクエストに集中して攻略。城下町 → 北の森 → 神殿 → 魔王城のルートを歩きながら、スマホでモンスターを倒して魔王を討伐。</div>
+              <div class="tl-tips">
+                <div class="tl-tip"><div class="tl-tip-icon">⏱</div><div>メインのみなら約2.5時間で完走できる</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">📱</div><div>スマホをフル充電してから入場</div></div>
+              </div>
+              <div class="tl-address">📍 〒656-2307 兵庫県淡路市楠本2425-2</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item" style="cursor:default;">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">12:30</div>
+              <div class="tl-title">🚗 移動（約15分）</div>
+              <div class="tl-brief">北淡ICを降りてシマウマバーガーへ</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item gold" onclick="toggleItem(this)">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">13:00 頃</div>
+              <div class="tl-title">🍔 シマウマバーガー</div>
+              <div class="tl-brief">余裕の時間帯で品切れリスク低。テラスで海風</div>
+            </div>
+            <div class="expand-icon">＋</div>
+          </div>
+          <div class="tl-detail">
+            <div class="tl-detail-inner">
+              <div class="tl-desc">淡路島産玉ねぎを低温でじっくり揚げたオニオンフライが主役のご当地バーガー。甘み・コク・サクサクの三重奏。海風を感じる開放的な芝生テラス席で食べられる。</div>
+              <div class="tl-tips">
+                <div class="tl-tip"><div class="tl-tip-icon">🍔</div><div>おすすめ：ザ淡路牛プレミアムバーガー / 2種のあぶりチーズバーガー</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">⏰</div><div>営業時間 11:00〜17:00。13時台は余裕あり</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🧅</div><div>淡路島玉ねぎの甘さを存分に楽しんで</div></div>
+              </div>
+              <div class="tl-address">📍 〒656-1602 兵庫県淡路市育波459</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item free">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">14:30〜</div>
+              <div class="tl-title">✨ 午後フレキシブルタイム</div>
+              <div class="tl-brief">道の駅うずしお（渦潮ビュー）/ ONOKORO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plan C タイムライン -->
+    <div id="plan-c" class="plan-timeline">
+      <div class="notice tip">🚀 シマウマバーガーを確実に食べたいなら開店ダッシュが最適。DQは午後にも楽しめる。</div>
+      <div class="timeline">
+        <div class="tl-item" onclick="toggleItem(this)">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">10:00〜11:30</div>
+              <div class="tl-title">🐉 DQアイランド クイック体験</div>
+              <div class="tl-brief">序盤〜中盤を楽しんで早めに退場</div>
+            </div>
+            <div class="expand-icon">＋</div>
+          </div>
+          <div class="tl-detail">
+            <div class="tl-detail-inner">
+              <div class="tl-desc">DQアイランドを1.5時間でクイック体験。城下町〜北の森エリアまでを楽しんで、シマウマのために早めに切り上げる。続きは午後に戻って楽しめる。</div>
+              <div class="tl-tips">
+                <div class="tl-tip"><div class="tl-tip-icon">🔄</div><div>当日は再入場可能。午後に戻る選択肢もあり</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">📱</div><div>スマホをフル充電してから入場</div></div>
+              </div>
+              <div class="tl-address">📍 〒656-2307 兵庫県淡路市楠本2425-2</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item" style="cursor:default;">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">11:30</div>
+              <div class="tl-title">🚗 移動（約15分）</div>
+              <div class="tl-brief">北淡ICを降りてシマウマバーガーへ</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item gold" onclick="toggleItem(this)">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">11:45 頃</div>
+              <div class="tl-title">🍔 シマウマバーガー 開店ダッシュ！</div>
+              <div class="tl-brief">品切れリスク最小。開店直後の確実な一手</div>
+            </div>
+            <div class="expand-icon">＋</div>
+          </div>
+          <div class="tl-detail">
+            <div class="tl-detail-inner">
+              <div class="tl-desc">開店（11:00）直後の時間帯は品切れリスクが最も低い。人気メニューをしっかり確保して、海テラスでゆっくり楽しめる。</div>
+              <div class="tl-tips">
+                <div class="tl-tip"><div class="tl-tip-icon">✅</div><div>11時台〜12時台が品切れリスク最小の黄金タイム</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🍔</div><div>おすすめ：ザ淡路牛プレミアムバーガー / 2種のあぶりチーズバーガー</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🌿</div><div>芝生テラス席でのんびり食べよう</div></div>
+              </div>
+              <div class="tl-address">📍 〒656-1602 兵庫県淡路市育波459 ｜ 11:00〜17:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item free" onclick="toggleItem(this)">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">13:00〜</div>
+              <div class="tl-title">✨ 午後は選択肢豊富</div>
+              <div class="tl-brief">DQに戻る / 道の駅うずしお / ONOKORO</div>
+            </div>
+            <div class="expand-icon">＋</div>
+          </div>
+          <div class="tl-detail">
+            <div class="tl-detail-inner">
+              <div class="tl-tips">
+                <div class="tl-tip"><div class="tl-tip-icon">🐉</div><div><strong>DQアイランドに戻る</strong> — 午前の続き、残りのクエストを攻略</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🌀</div><div><strong>道の駅うずしお</strong> — 鳴門海峡の渦潮を上から眺める絶景スポット</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🎡</div><div><strong>ONOKORO</strong> — 淡路島のテーマパーク。乗り物・景色ともに楽しい</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">♨️</div><div><strong>宿で早め温泉</strong> — 贅沢にゆっくりするのもアリ</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 夜 -->
+    <div class="timeline" style="margin-top: 16px;">
+      <div class="tl-item no-expand">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">夜</div>
+            <div class="tl-title">🍽 宿 夕食 ＋ 温泉</div>
+            <div class="tl-brief">最後の夜を温泉でゆっくり</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     DAY 3
+════════════════════════════════ -->
+<div id="tab-day3" class="tab-content">
+  <div class="container">
+
+    <div class="day-header">
+      <div class="day-num" style="color:var(--coral)">3</div>
+      <div class="day-info">
+        <div class="day-date">5月21日（木）</div>
+        <div class="day-title">帰宅日 ☔</div>
+      </div>
+      <div class="day-weather">
+        <div class="temp" style="color:var(--coral)">🌧 24℃</div>
+        <div class="rain" style="color:var(--coral);font-weight:700">降水 90%</div>
+      </div>
+    </div>
+
+    <div class="notice rain">☔ 終日雨予報。傘を忘れずに</div>
+
+    <div class="timeline">
+      <div class="tl-item no-expand">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">午前</div>
+            <div class="tl-title">🏨 チェックアウト → 神戸方面へ</div>
+            <div class="tl-brief">最後の朝ごはんをゆっくり楽しんでから出発</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item gold no-expand">
+        <div class="tl-header">
+          <div class="tl-header-text">
+            <div class="tl-time">14:00</div>
+            <div class="tl-title">👋 解散 — また会いましょう</div>
+            <div class="tl-brief">新神戸周辺にて。2泊3日、お疲れさまでした。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     MAP
+════════════════════════════════ -->
+<div id="tab-map" class="tab-content">
+  <div class="container">
+    <div style="padding-top: 24px;">
+      <div id="map"></div>
+      <div class="map-legend">
+        <div class="map-legend-item"><div class="map-legend-dot" style="background:#2e6fa3"></div>Day1（神戸〜淡路北部）</div>
+        <div class="map-legend-item"><div class="map-legend-dot" style="background:#5a8a6a"></div>Day2（淡路中南部）</div>
+        <div class="map-legend-item"><div class="map-legend-dot" style="background:#e07b5a"></div>宿・ホテル</div>
+        <div class="map-legend-item"><div class="map-legend-dot" style="background:#c9a84c"></div>グルメ</div>
+      </div>
+      <div class="notice tip" style="margin-top: 16px;">📍 ピンをタップするとスポット名と住所が表示されます</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     WEATHER
+════════════════════════════════ -->
+<div id="tab-weather" class="tab-content">
+  <div class="container">
+    <div style="padding-top: 24px;">
+      <div class="weather-note">※ウェザーニュース基準（5/16更新）</div>
+      <div class="weather-row">
+        <div class="w-date">5/19（火）Day 1</div>
+        <div class="w-icon">☀️</div>
+        <div class="w-desc">晴時々曇 — 暑くなりそう</div>
+        <div class="w-temp">28℃</div>
+        <div class="w-rain">20%</div>
+      </div>
+      <div class="weather-row">
+        <div class="w-date">5/20（水）Day 2</div>
+        <div class="w-icon">🌧</div>
+        <div class="w-desc">曇時々雨 — 傘あると安心</div>
+        <div class="w-temp">26℃</div>
+        <div class="w-rain danger">60% ☔</div>
+      </div>
+      <div class="weather-row">
+        <div class="w-date">5/21（木）Day 3</div>
+        <div class="w-icon">🌧</div>
+        <div class="w-desc">雨 — 傘必須</div>
+        <div class="w-temp">23℃</div>
+        <div class="w-rain danger">90% ☔</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
 <div class="footer">
   <span class="footer-heart">♡</span>
   神戸・淡路島の旅 ｜ 2026.5.19 — 5.21
 </div>
 
-<!-- ===== LEAFLET MAP ===== -->
+<!-- ════════════ SCRIPTS ════════════ -->
 <script>
-  const map = L.map('map', { zoomControl: true, scrollWheelZoom: false }).setView([34.57, 135.05], 10);
+  // ── タブ切り替え ──
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + tab).classList.add('active');
+      // マップタブを開いた時にサイズ修正
+      if (tab === 'map') { setTimeout(() => map.invalidateSize(), 100); }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
 
+  // ── タイムラインアイテム 展開 ──
+  function toggleItem(el) {
+    if (el.classList.contains('no-expand')) return;
+    const detail = el.querySelector('.tl-detail');
+    if (!detail) return;
+    const isOpen = el.classList.contains('open');
+    el.classList.toggle('open');
+    detail.style.maxHeight = isOpen ? '0' : detail.scrollHeight + 'px';
+  }
+
+  // ── Day2 プラン選択 ──
+  function selectPlan(id) {
+    document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.plan-timeline').forEach(t => t.classList.remove('active'));
+    document.querySelector(`[onclick="selectPlan('${id}')"]`).classList.add('active');
+    document.getElementById('plan-' + id).classList.add('active');
+  }
+
+  // ── Leaflet マップ ──
+  const map = L.map('map', { zoomControl: true, scrollWheelZoom: false }).setView([34.57, 135.05], 10);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors', maxZoom: 18
   }).addTo(map);
@@ -455,18 +940,11 @@
   }
 
   const spots = [
-    // 神戸
     { latlng: [34.7053, 135.1951], emoji: '🚄', color: '#2e6fa3', name: '新神戸駅（集合・解散）', addr: '兵庫県神戸市中央区' },
-
-    // 淡路島 北部
     { latlng: [34.6046, 134.9100], emoji: '🦐', color: '#c9a84c', name: '道の駅あわじ／えびす丸', addr: '〒656-1521 淡路市岩屋925-1' },
     { latlng: [34.6042, 134.9088], emoji: '🏨', color: '#5a8a6a', name: '岩屋温泉 絵島別庭 海と森', addr: '〒656-2401 淡路市岩屋922-1' },
-
-    // 淡路島 中部
     { latlng: [34.5199, 134.9228], emoji: '🥞', color: '#c9a84c', name: '幸せのパンケーキ 淡路島テラス', addr: '〒656-1501 淡路市尾崎42-1' },
     { latlng: [34.5492, 134.8888], emoji: '🍔', color: '#c9a84c', name: 'シマウマバーガー 淡路島本店', addr: '〒656-1602 淡路市育波459' },
-
-    // 淡路島 南部〜西部
     { latlng: [34.4634, 134.9773], emoji: '🌿', color: '#2e6fa3', name: '夢舞台', addr: '〒656-2306 淡路市夢舞台2番地' },
     { latlng: [34.4519, 134.9737], emoji: '🐉', color: '#c96a2a', name: 'DQアイランド / アクアイグニス淡路', addr: '〒656-2307 淡路市楠本2425-2' },
     { latlng: [34.4426, 134.9074], emoji: '⛩', color: '#2e6fa3', name: '本福寺 水御堂', addr: '〒656-1521 淡路市浦1309' },
@@ -479,17 +957,10 @@
       .bindPopup(`<strong>${s.name}</strong><br><small style="color:#888">${s.addr}</small>`);
   });
 
-  // ルートライン
   const route = [
-    [34.7053, 135.1951],
-    [34.6046, 134.9100],
-    [34.6042, 134.9088],
-    [34.5199, 134.9228],
-    [34.5492, 134.8888],
-    [34.4634, 134.9773],
-    [34.4519, 134.9737],
-    [34.4426, 134.9074],
-    [34.5028, 135.0251],
+    [34.7053, 135.1951],[34.6046, 134.9100],[34.6042, 134.9088],
+    [34.5199, 134.9228],[34.5492, 134.8888],[34.4634, 134.9773],
+    [34.4519, 134.9737],[34.4426, 134.9074],[34.5028, 135.0251],
   ];
   L.polyline(route, { color: '#2e6fa3', weight: 2.5, opacity: 0.45, dashArray: '6, 6' }).addTo(map);
 </script>
