@@ -588,7 +588,7 @@
       <div class="day-num">2</div>
       <div class="day-info">
         <div class="day-date">5月20日（水）</div>
-        <div class="day-title">淡路島満喫</div>
+        <div class="day-title">ドラクエと、雨の淡路島。</div>
       </div>
       <div class="day-weather">
         <div class="temp" style="color:var(--coral)">🌧 23℃</div>
@@ -602,7 +602,7 @@
           <div class="tl-header-text">
             <div class="tl-time">7:30〜8:00</div>
             <div class="tl-title">🌅 起床</div>
-            <div class="tl-brief">起床時間は前日夜に確認しよう。</div>
+            <div class="tl-brief">温泉宿の朝、気持ちいい。</div>
           </div>
         </div>
       </div>
@@ -631,7 +631,7 @@
       <h2>今日のプランを選んで</h2>
       <div class="line"></div>
     </div>
-    <div class="plan-intro">DQアイランドとシマウマバーガー、どっちをどう攻める？</div>
+    <div class="plan-intro">ゴールドチケットは手配済み。あとは、どのペースで楽しむかだけ。</div>
 
     <div class="plan-cards">
       <div class="plan-card active" onclick="selectPlan('a')">
@@ -640,7 +640,7 @@
           <div class="plan-card-title">🐉 DQの世界にどっぷり</div>
           <div class="plan-check">✓</div>
         </div>
-        <div class="plan-card-sub">4時間フルコース → ルイーダ → 閉店ギリギリでシマウマへ</div>
+        <div class="plan-card-sub">4時間どっぷり。ルイーダでランチして、夕方シマウマに駆け込む。</div>
       </div>
       <div class="plan-card" onclick="selectPlan('b')">
         <div class="plan-card-header">
@@ -648,7 +648,7 @@
           <div class="plan-card-title">🍔 DQ堪能 → シマウマで締め</div>
           <div class="plan-check">✓</div>
         </div>
-        <div class="plan-card-sub">DQ 3h → 余裕でシマウマバーガー</div>
+        <div class="plan-card-sub">しっかり3時間遊んで、昼はシマウマ。午後はフリー。</div>
       </div>
       <div class="plan-card" onclick="selectPlan('c')">
         <div class="plan-card-header">
@@ -656,13 +656,12 @@
           <div class="plan-card-title">🚀 シマウマを先に確保</div>
           <div class="plan-check">✓</div>
         </div>
-        <div class="plan-card-sub">DQメイン2h → シマウマ確保 → 午後サブクエ戻り</div>
+        <div class="plan-card-sub">先にシマウマを確保してから、午後またDQへ戻るプラン。</div>
       </div>
     </div>
 
     <!-- Plan A -->
     <div id="plan-a" class="plan-timeline active">
-      <div class="notice tip">🐉 DQをとことん楽しむ日。ランチはルイーダで、夕方ギリギリにシマウマへ駆け込む。</div>
       <div class="timeline">
         <div class="tl-item gold" onclick="toggleItem(this)">
           <div class="tl-header">
@@ -720,7 +719,7 @@
             <div class="tl-header-text">
               <div class="tl-time">16:30 頃</div>
               <div class="tl-title">🍔 シマウマバーガー waSTEP店 ギリギリ駆け込み</div>
-              <div class="tl-brief">閉店30分前。でも行く価値ある。</div>
+              <div class="tl-brief">閉店30分前でも、行く価値はある。</div>
             </div>
             <div class="expand-icon">＋</div>
           </div>
@@ -750,7 +749,6 @@
 
     <!-- Plan B -->
     <div id="plan-b" class="plan-timeline">
-      <div class="notice tip">🍔 DQをしっかり楽しんでから、余裕の時間でシマウマへ。</div>
       <div class="timeline">
         <div class="tl-item gold" onclick="toggleItem(this)">
           <div class="tl-header">
@@ -808,7 +806,7 @@
             <div class="tl-header-text">
               <div class="tl-time">14:30〜</div>
               <div class="tl-title">✨ 午後は気分のままに</div>
-              <div class="tl-brief">渦潮を見に行くか、温泉に戻るか。</div>
+              <div class="tl-brief">下の候補から選ぶか、もう温泉に戻ってもいい。</div>
             </div>
           </div>
         </div>
@@ -817,14 +815,13 @@
 
     <!-- Plan C -->
     <div id="plan-c" class="plan-timeline">
-      <div class="notice tip">🚀 シマウマを確実に食べたい日。開店直後が品切れリスク最小。</div>
       <div class="timeline">
         <div class="tl-item" onclick="toggleItem(this)">
           <div class="tl-header">
             <div class="tl-header-text">
               <div class="tl-time">10:00〜12:00</div>
               <div class="tl-title">🐉 DQアイランド（メインクエスト 2h）</div>
-              <div class="tl-brief">メインクエストを2時間でクリア。シマウマを先に確保。</div>
+              <div class="tl-brief">まず魔王を倒してから、ご飯を食べに行く。</div>
             </div>
             <div class="expand-icon">＋</div>
           </div>
@@ -895,14 +892,17 @@
     </div>
 
     <!-- 午後の候補 -->
-    <div class="section-title" style="margin-top: 20px;">🌆 シマウマの後の候補</div>
-    <div class="notice tip">✅ グリナリウムは火曜定休のみ → 水曜の5/20は行けます</div>
+    <div class="section-title" style="margin-top: 20px;">
+      <div class="icon" style="background:#f0f8ff">🌆</div>
+      <h2>シマウマの後、どこ行く？</h2>
+      <div class="line"></div>
+    </div>
     <div class="timeline">
 
       <div class="tl-item" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">waSTEPから約24分</div>
+            <div class="tl-time">🚗 約24分</div>
             <div class="tl-title">🦑 たこせんべいの里</div>
             <div class="tl-brief">試食しながら、淡路のたこせんべいを買いあさる。</div>
           </div>
@@ -925,9 +925,9 @@
       <div class="tl-item" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">waSTEPから約35分</div>
+            <div class="tl-time">🚗 約35分</div>
             <div class="tl-title">🧅 日洋堂（玉ねぎケーキ）</div>
-            <div class="tl-brief">洲本の老舗洋菓子店。玉ねぎケーキが名物。</div>
+            <div class="tl-brief">淡路島産玉ねぎを使ったケーキが名物の、白い洋菓子店。</div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
@@ -947,9 +947,9 @@
       <div class="tl-item" onclick="toggleItem(this)">
         <div class="tl-header">
           <div class="tl-header-text">
-            <div class="tl-time">waSTEPから約12分 ／ <span style="color:#2e7d32;font-weight:700">✅ 5/20水曜OK</span></div>
+            <div class="tl-time">🚗 約12分 ／ <span style="color:#2e7d32;font-weight:700">✅ 水曜OK</span></div>
             <div class="tl-title">🍓 グリナリウム淡路島</div>
-            <div class="tl-brief">空飛ぶいちごハウスと農園レストラン。水曜は営業してる。</div>
+            <div class="tl-brief">頭上にいちごが吊り下がる「空飛ぶいちごハウス」。雨でも屋根あり。</div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
