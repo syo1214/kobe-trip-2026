@@ -260,6 +260,18 @@
     /* ── FOOTER ── */
     .footer { text-align: center; padding: 40px 24px 60px; color: #ccc; font-size: 12px; letter-spacing: 2px; line-height: 2.4; background: white; }
     .footer-heart { display: block; font-size: 20px; color: var(--coral); margin-bottom: 8px; }
+
+    /* ── MODE TOGGLE ── */
+    .memory-only { display: none; }
+    body.memory-mode .guide-only { display: none !important; }
+    body.memory-mode .memory-only { display: block !important; }
+    span.guide-only { display: inline; }
+    body.memory-mode span.guide-only { display: none !important; }
+    body.memory-mode span.memory-only { display: inline !important; }
+    .mode-toggle-wrap { display: flex; justify-content: center; margin-top: 20px; }
+    .mode-toggle { display: inline-flex; background: rgba(255,255,255,0.18); border-radius: 22px; padding: 3px; gap: 2px; }
+    .mode-btn { padding: 6px 22px; border-radius: 19px; border: none; background: transparent; font-size: 12px; cursor: pointer; transition: all 0.22s; color: rgba(255,255,255,0.65); font-family: inherit; letter-spacing: 0.5px; }
+    .mode-btn.active { background: white; color: #1a2744; font-weight: 600; box-shadow: 0 1px 6px rgba(0,0,0,0.18); }
   </style>
 </head>
 <body>
@@ -285,14 +297,20 @@
     </svg>
   </div>
   <!-- コンテンツ -->
-  <div class="hero-label">Travel Itinerary</div>
+  <div class="hero-label"><span class="guide-only">Travel Itinerary</span><span class="memory-only">Travel Memory</span></div>
   <h1>神戸・淡路島の旅</h1>
-  <div class="hero-tagline">神戸から淡路島へ、2泊3日の旅。</div>
+  <div class="hero-tagline"><span class="guide-only">神戸から淡路島へ、2泊3日の旅。</span><span class="memory-only">神戸から淡路島へ、あの2泊3日。</span></div>
   <div class="hero-dates">2026.5.19 — 5.21 ｜ 2泊3日</div>
   <div class="hero-badges">
     <span class="badge">🌊 岩屋温泉</span>
     <span class="badge">🦑 海鮮グルメ</span>
     <span class="badge">🐉 ドラクエ冒険</span>
+  </div>
+  <div class="mode-toggle-wrap">
+    <div class="mode-toggle">
+      <button class="mode-btn active" onclick="setMode('guide')" id="btn-guide">📋 しおり</button>
+      <button class="mode-btn" onclick="setMode('memory')" id="btn-memory">📸 思い出</button>
+    </div>
   </div>
 </div>
 
@@ -390,7 +408,7 @@
           <div class="tl-header-text">
             <div class="tl-time">11:00〜12:15</div>
             <div class="tl-title">🦐 道の駅あわじ／えびす丸</div>
-            <div class="tl-brief">橋を渡ったらすぐここ。海の前で食べる。</div>
+            <div class="tl-brief"><span class="guide-only">橋を渡ったらすぐここ。海の前で食べる。</span><span class="memory-only">橋を渡ってすぐ食べたね。あの橋、ずっと見えてた。</span></div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
@@ -415,7 +433,7 @@
           <div class="tl-header-text">
             <div class="tl-time">12:45〜13:45</div>
             <div class="tl-title">🌿 夢舞台</div>
-            <div class="tl-brief">ここどこ、と思う場所。</div>
+            <div class="tl-brief"><span class="guide-only">ここどこ、と思う場所。</span><span class="memory-only">ここどこ、ってなったよね。日本じゃない感じがした。</span></div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
@@ -441,7 +459,7 @@
           <div class="tl-header-text">
             <div class="tl-time">13:50〜14:35</div>
             <div class="tl-title">🥐 アクアイグニス淡路</div>
-            <div class="tl-brief">明日の朝ごはんを、ここで選ぶ。</div>
+            <div class="tl-brief"><span class="guide-only">明日の朝ごはんを、ここで選ぶ。</span><span class="memory-only">翌朝のパン、ここで選んだんだよね。</span></div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
@@ -466,7 +484,7 @@
           <div class="tl-header-text">
             <div class="tl-time">15:00〜</div>
             <div class="tl-title">🏨 絵島別庭 海と森</div>
-            <div class="tl-brief">窓を開けた瞬間から、始まってる。</div>
+            <div class="tl-brief"><span class="guide-only">窓を開けた瞬間から、始まってる。</span><span class="memory-only">窓を開けたら、橋と海が本当にそこにあった。</span></div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
@@ -492,7 +510,7 @@
           <div class="tl-header-text">
             <div class="tl-time">15:45〜16:15</div>
             <div class="tl-title">⛩ 本福寺 水御堂</div>
-            <div class="tl-brief">池を二つに割って、地下へ。</div>
+            <div class="tl-brief"><span class="guide-only">池を二つに割って、地下へ。</span><span class="memory-only">池を割って地下へ降りたね。あの朱色、忘れない。</span></div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
@@ -518,7 +536,7 @@
           <div class="tl-header-text">
             <div class="tl-time">〜16:50出発（17:00閉館）</div>
             <div class="tl-title">🌸 花さじき</div>
-            <div class="tl-brief">高台に出た瞬間、深呼吸したくなる。</div>
+            <div class="tl-brief"><span class="guide-only">高台に出た瞬間、深呼吸したくなる。</span><span class="memory-only">高台に出た瞬間、よかったよね。海と花が全部見えてた。</span></div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
@@ -544,7 +562,7 @@
           <div class="tl-header-text">
             <div class="tl-time">17:20〜19:30</div>
             <div class="tl-title">🥞 幸せのパンケーキ 淡路島テラス</div>
-            <div class="tl-brief">口に入れた瞬間、しゅわっと消える。</div>
+            <div class="tl-brief"><span class="guide-only">口に入れた瞬間、しゅわっと消える。</span><span class="memory-only">しゅわっと消えたね。あれ本当においしかった。</span></div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
@@ -570,7 +588,7 @@
           <div class="tl-header-text">
             <div class="tl-time">19:50〜</div>
             <div class="tl-title">♨️ 絵島別庭 海と森 — 温泉</div>
-            <div class="tl-brief">今日のご褒美。</div>
+            <div class="tl-brief"><span class="guide-only">今日のご褒美。</span><span class="memory-only">初日の温泉。あれで全部吹き飛んだ。</span></div>
           </div>
         </div>
       </div>
@@ -601,7 +619,7 @@
           <div class="tl-header-text">
             <div class="tl-time">8:00</div>
             <div class="tl-title">🌅 起床</div>
-            <div class="tl-brief">温泉宿の朝、気持ちいい。</div>
+            <div class="tl-brief"><span class="guide-only">温泉宿の朝、気持ちいい。</span><span class="memory-only">あの宿の朝、静かでよかった。</span></div>
           </div>
         </div>
       </div>
@@ -610,7 +628,7 @@
           <div class="tl-header-text">
             <div class="tl-time">朝食</div>
             <div class="tl-title">🥐 朝食 — 昨日選んだパン</div>
-            <div class="tl-brief">昨日の選択が、今朝を特別にする。</div>
+            <div class="tl-brief"><span class="guide-only">昨日の選択が、今朝を特別にする。</span><span class="memory-only">アクアイグニスのパン、最高だったね。</span></div>
           </div>
         </div>
       </div>
@@ -619,12 +637,13 @@
           <div class="tl-header-text">
             <div class="tl-time">9:50</div>
             <div class="tl-title">🚗 宿を出発</div>
-            <div class="tl-brief">ニジゲンノモリまで約8分。9:50出発で10:00開場にちょうど間に合う。</div>
+            <div class="tl-brief"><span class="guide-only">ニジゲンノモリまで約8分。9:50出発で10:00開場にちょうど間に合う。</span><span class="memory-only">9:50に宿を出て、8分でドラクエの世界に入った。</span></div>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="guide-only">
     <div class="section-title">
       <div class="icon" style="background:#fff8e8">🗂</div>
       <h2>今日のプランを選んで</h2>
@@ -968,13 +987,108 @@
 
     </div>
 
+    </div><!-- /guide-only -->
+
+    <!-- ── 思い出モード：Day2 実際のタイムライン ── -->
+    <div class="memory-only">
+      <div class="timeline">
+        <div class="tl-item gold" onclick="toggleItem(this)">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">10:00〜14:45</div>
+              <div class="tl-title">🐉 DQアイランド — ほぼ5時間</div>
+              <div class="tl-brief">ゴールドチケット、めちゃくちゃ元取ったね。</div>
+            </div>
+            <div class="expand-icon">＋</div>
+          </div>
+          <div class="tl-detail">
+            <div class="tl-detail-inner">
+              <div class="tl-desc">城下町から魔王城まで、本物の森の中を歩き続けた。気づいたら14:45。ゴールドチケットの元は取り切った日。</div>
+              <div class="tl-tips">
+                <div class="tl-tip"><div class="tl-tip-icon">⚔️</div><div>メインクエスト＋サブクエスト＋ラリー。フルコース攻略</div></div>
+                <div class="tl-tip"><div class="tl-tip-icon">🍺</div><div>ルイーダの酒場：行列で入れず。休憩なしで歩き続けた</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-drive">移動 約11分</div>
+        <div class="tl-item gold" onclick="toggleItem(this)">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">15時台</div>
+              <div class="tl-title">🍔 シマウマバーガー waSTEP店</div>
+              <div class="tl-brief">淡路島産の玉ねぎが甘くて、それだけで特別だった。</div>
+            </div>
+            <div class="expand-icon">＋</div>
+          </div>
+          <div class="tl-detail">
+            <div class="tl-detail-inner">
+              <div class="tl-address">📍 〒656-2302 兵庫県淡路市大磯7-2（waSTEP AWAJISHIMA・GOOD MEAT内）</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-drive">晩酌つまみ探し巡り</div>
+        <div class="tl-item" onclick="toggleItem(this)">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">16時台</div>
+              <div class="tl-title">🛒 道の駅あわじ → タコステ → マイマート岩屋</div>
+              <div class="tl-brief">晩酌の食材、島をはしごして集めた。</div>
+            </div>
+            <div class="expand-icon">＋</div>
+          </div>
+          <div class="tl-detail">
+            <div class="tl-detail-inner">
+              <div class="tl-desc">夜の晩酌に向けて、道の駅あわじ・タコステ・マイマート岩屋店をはしご。淡路島産のつまみを集めた。</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item no-expand">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">17時前</div>
+              <div class="tl-title">🏨 宿に帰着</div>
+              <div class="tl-brief">早めに帰れてよかった。</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item no-expand">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">17:15〜18:45</div>
+              <div class="tl-title">💤 昼寝</div>
+              <div class="tl-brief">旅の昼寝。1時間半も寝てた。</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item no-expand">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">19:15〜20:00</div>
+              <div class="tl-title">♨️ 温泉</div>
+              <div class="tl-brief">昼寝の後の温泉、最高だった。</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item no-expand">
+          <div class="tl-header">
+            <div class="tl-header-text">
+              <div class="tl-time">20:00〜</div>
+              <div class="tl-title">🍶 晩酌</div>
+              <div class="tl-brief">集めてきたつまみで、部屋飲み。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /memory-only -->
+
     <div class="timeline" style="margin-top: 16px;">
       <div class="tl-item no-expand">
         <div class="tl-header">
           <div class="tl-header-text">
             <div class="tl-time">夜</div>
             <div class="tl-title">♨️ 絵島別庭 海と森 — 温泉</div>
-            <div class="tl-brief">最後の夜も、温泉がある。</div>
+            <div class="tl-brief"><span class="guide-only">最後の夜も、温泉がある。</span><span class="memory-only">最後の夜も、温泉があった。</span></div>
           </div>
         </div>
       </div>
@@ -1014,7 +1128,7 @@
           <div class="tl-header-text">
             <div class="tl-time">〜11:00</div>
             <div class="tl-title">🏨 チェックアウト期日（ホテル規定）</div>
-            <div class="tl-brief">部屋を出る締め切り。</div>
+            <div class="tl-brief"><span class="guide-only">部屋を出る締め切り。</span><span class="memory-only">名残惜しかったね。</span></div>
           </div>
         </div>
       </div>
@@ -1023,7 +1137,7 @@
           <div class="tl-header-text">
             <div class="tl-time">10:30</div>
             <div class="tl-title">🚗 出発</div>
-            <div class="tl-brief">14:00解散に合わせて逆算。</div>
+            <div class="tl-brief"><span class="guide-only">14:00解散に合わせて逆算。</span><span class="memory-only">帰りたくなかった。</span></div>
           </div>
         </div>
       </div>
@@ -1034,7 +1148,7 @@
           <div class="tl-header-text">
             <div class="tl-time">12:30〜14:00</div>
             <div class="tl-title">🌊 しゃぽーるーじゅ — 旅の最後の一食</div>
-            <div class="tl-brief">海を見ながら、フレンチ洋食。旅の締めくくりにちょうどいい。</div>
+            <div class="tl-brief"><span class="guide-only">海を見ながら、フレンチ洋食。旅の締めくくりにちょうどいい。</span><span class="memory-only">最後の食事、ここにしてよかったね。</span></div>
           </div>
           <div class="expand-icon">＋</div>
         </div>
@@ -1055,7 +1169,7 @@
           <div class="tl-header-text">
             <div class="tl-time">14:00</div>
             <div class="tl-title">👋 またね</div>
-            <div class="tl-brief">新神戸周辺にて。</div>
+            <div class="tl-brief"><span class="guide-only">新神戸周辺にて。</span><span class="memory-only">またね、って言った場所。</span></div>
           </div>
         </div>
       </div>
@@ -1251,6 +1365,12 @@
     [34.4519, 134.9737],[34.4426, 134.9074],[34.5535, 134.9780],
   ];
   L.polyline(route, { color: '#2e6fa3', weight: 2.5, opacity: 0.45, dashArray: '6, 6' }).addTo(map);
+
+  function setMode(mode) {
+    document.body.classList.toggle('memory-mode', mode === 'memory');
+    document.getElementById('btn-guide').classList.toggle('active', mode === 'guide');
+    document.getElementById('btn-memory').classList.toggle('active', mode === 'memory');
+  }
 </script>
 
 </body>
